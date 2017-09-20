@@ -100,6 +100,7 @@ header {
   width: auto;
   display: flex;
   flex-flow: row;
+  overflow: hidden;
 }
 
 .join-email {
@@ -149,11 +150,7 @@ header {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
-
-.carousel img {
-  height: 100%;
-  width: auto;
+  overflow: hidden;
 }
 
 /* STORE LOCATOR */

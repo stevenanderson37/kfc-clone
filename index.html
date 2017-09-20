@@ -46,13 +46,7 @@
         </div>
       </div>
 
-      <div class="carousel">
-        <!-- <img src="./img/carousel_1.jpg" /> -->
-        <!-- <img src="./img/carousel_2.jpg" />
-        <img src="./img/carousel_3.jpg" />
-        <img src="./img/carousel_4.jpg" />
-        <img src="./img/carousel_5.jpg" /> -->
-      </div>
+      <div class="carousel"></div>
     </div>
 
     <div class="store-locator">
@@ -61,6 +55,28 @@
         <div class="store-locator-img"></div>
       </div>
     </div>
+
+    <script>
+      var i = 0;
+      var images = ['../img/carousel_1.jpg', '../img/carousel_2.jpg', '../img/carousel_3.jpg', '../img/carousel_4.jpg', '../img/carousel_5.jpg'];
+      var time = 3000;
+
+      function changeImg() {
+        var sliderDiv = document.querySelector('.carousel');
+
+        sliderDiv.style.backgroundImage = "url(" + images[i] + ")";
+
+        if (i < images.length - 1) {
+          i++;
+        } else {
+          i = 0;
+        }
+
+        setTimeout("changeImg()", time);
+      }
+
+      window.onload = changeImg;
+    </script>
 
   </body>
 </html>
