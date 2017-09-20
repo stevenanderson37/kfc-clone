@@ -1,0 +1,189 @@
+/* HEADER */
+header {
+  height: 60px;
+  width: auto;
+  margin: auto;
+  background-color: #e4002b;
+}
+
+#ham-button {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 0px;
+  cursor: pointer;
+}
+
+.ham-menu {
+  height: 16px;
+  width: 24px;
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 12px);
+}
+
+.top-bar {
+  height: 2px;
+  width: 24px;
+  background-color: #fff;
+  position: absolute;
+  top: 0px;
+}
+
+.middle-bar {
+  height: 2px;
+  width: 12px;
+  background-color: #fff;
+  position: absolute;
+  top: calc(50% - 1px);
+}
+
+.bottom-bar {
+  height: 2px;
+  width: 18px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0px;
+}
+
+.kfc-logo {
+  width: 182px;
+  height: 100%;
+  margin: auto;
+  background-image: url(../img/kfc-logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.social-media-icons {
+  width: 175px;
+  height: 60px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  flex-direction: row;
+}
+
+.social-media-icons img {
+  height: 17px;
+  width: auto;
+  margin-top: 20px;
+  margin-left: 10px
+}
+
+.social-media-icons img:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+/* MENU CAROUSEL */
+.menu-carousel {
+  width: auto;
+  height: auto;
+  background-color: #fff;
+}
+
+.menu-categories {
+  height: 60px;
+  width: 100%;
+}
+
+.menu-pics {
+  height: 210px;
+  width: 100%;
+}
+
+/* BOTTOM SECTION */
+.bottom-section {
+  height: calc(100vh - 330px);
+  width: auto;
+  display: flex;
+  flex-flow: row;
+}
+
+.join-email {
+  width: 50vw;
+  height: 100%;
+  background-image: url(../img/kfc-colonels-club-92227e40b405ecc3377fa90e4effc40a246efd114f11d4542fe017cc899d2b58.jpg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.join-email-inner {
+  height: 100%;
+  width: auto;
+  margin-top: 20vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.join-email h2 {
+  color: #fff;
+  font-family: "PakenhamW00-Black", arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 40px;
+  text-align: center;
+}
+
+.join-email p {
+  height: 52px;
+  width: auto;
+  height: auto;
+  margin: auto;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: .7px;
+  padding: 10px 20px 0px 20px;
+}
+
+.carousel {
+  width: 50vw;
+  height: 100%;
+  background-image: url(../img/carousel_1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.carousel img {
+  height: 100%;
+  width: auto;
+}
+
+/* STORE LOCATOR */
+.store-locator {
+
+}
+
+.store-locator-bar {
+  height: 54px;
+  /*width: 335px;*/
+  width: 25vw;
+  background-color: rgba(228, 0, 43, .9);
+  position: absolute;
+  bottom: 0px;
+  color: #fff;
+  font-family: "Interstate-Bold","helvetica-neue",helvetica,sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.store-locator-img {
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  background-image: url(../img/icons.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+}
