@@ -2,7 +2,7 @@
 <html lang="eng">
   <head>
     <title>KFC Clone</title>
-    
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -125,6 +125,21 @@
 
       window.onload = changeImg;
 
+      // SOCIAL MEDIA BUTTON CLICK FOR TRANSFORM
+      var socialMediaButton = document.querySelector('#social-media-button');
+      var click = false;
+
+      socialMediaButton.addEventListener('click', function() {
+        var socialMediaSlideout = document.querySelector('.social-media-slideout');
+
+        if (click === false) {
+          click = true;
+          socialMediaSlideout.style.transform = 'translateX(0px)';
+        } else {
+          click = false;
+          socialMediaSlideout.style.transform = 'translateX(calc(100vw - 35px))';
+        }
+      });
 
     </script>
 

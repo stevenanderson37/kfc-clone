@@ -5,6 +5,25 @@
   }
 }
 
+@media(max-width: 878px) {
+  div.scrollmenu-categories {
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  .menu-categories-inner {
+    padding-left: 650px;
+  }
+
+  .menu-categories span h4 {
+    padding-left: 345px;
+  }
+
+  .menu-categories h4 span {
+    padding-right: 345px;
+  }
+}
+
 @media(max-width: 767px) {
   /* HEADER */
   header {
@@ -39,6 +58,7 @@
     left: 0px;
     background-color: #e4002b;
     transform: translateX(calc(100vw - 35px));
+    transition: transform .8s;
   }
 
   .social-media-icons {
@@ -59,6 +79,10 @@
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
+  }
+
+  .social-media-button:hover {
+    cursor: pointer;
   }
 
   /* MENU CAROUSEL */

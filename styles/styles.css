@@ -109,11 +109,6 @@ header {
   margin: auto;
 }
 
-div.scrollmenu-categories {
-  overflow: auto;
-  white-space: nowrap;
-}
-
 .menu-categories-inner {
   height: auto;
   width: 875px;
@@ -122,15 +117,6 @@ div.scrollmenu-categories {
   flex-flow: row;
   text-align: center;
   justify-content: center;
-  padding-left: 650px;
-}
-
-.menu-categories span h4 {
-  padding-left: 345px;
-}
-
-.menu-categories h4 span {
-  padding-right: 345px;
 }
 
 .menu-categories h4 {
@@ -337,8 +323,8 @@ div.scrollmenu-categories {
 }
 
 /* STORE LOCATOR */
-.store-locator {
-
+.store-locator:hover {
+  cursor: pointer;
 }
 
 .store-locator-bar {
