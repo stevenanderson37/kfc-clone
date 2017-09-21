@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="eng">
   <head>
-    <meta charset="utf-8">
     <title>KFC Clone</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="http://db.onlinewebfonts.com/c/6d75743bf51f7b70b71e57afbb7e911b?family=PakenhamW00-Black" rel="stylesheet" type="text/css" />
@@ -11,6 +13,7 @@
     <link href="./styles/reset.css" rel="stylesheet">
     <link href="./styles/styles.css"  rel="stylesheet">
     <link href="./styles/animate.css" rel="stylesheet">
+    <link href="./styles/media-queries.css"  rel="stylesheet">
   </head>
   <body>
     <header>
@@ -22,20 +25,47 @@
         </div>
       </div>
 
-      <div class="kfc-logo"> </div>
+      <div class="kfc-logo"></div>
 
-      <div class="social-media-icons">
+      <div class="social-media-icons no-display-lrg">
         <a href="https://www.facebook.com/KFC" target="_blank"><img src="./img/facebook-app-symbol.png" /></a>
         <a href="https://twitter.com/kfc" target="_blank"><img src="./img/twitter-logo-silhouette.png" /></a>
         <a href="https://instagram.com/kfc" target="_blank"><img src="./img/instagram-logo.png" /></a>
         <a href="https://www.youtube.com/kfc" target="_blank"><img src="./img/youtube-logo.png" /></a>
-        <img src="./img/mail.png" />
+        <img class="mail-icon" src="./img/mail.png" />
+      </div>
+
+      <div class="social-media-slideout no-display-sml">
+        <div id="social-media-button" class="social-media-button"></div>
+
+        <div class="social-media-icons">
+          <a href="https://www.facebook.com/KFC" target="_blank"><img src="./img/facebook-app-symbol.png" /></a>
+          <a href="https://twitter.com/kfc" target="_blank"><img src="./img/twitter-logo-silhouette.png" /></a>
+          <a href="https://instagram.com/kfc" target="_blank"><img src="./img/instagram-logo.png" /></a>
+          <a href="https://www.youtube.com/kfc" target="_blank"><img src="./img/youtube-logo.png" /></a>
+          <img class="mail-icon" src="./img/mail.png" />
+        </div>
       </div>
     </header>
 
     <div class="menu-carousel">
-      <div class="menu-categories"></div>
-      <div class="menu-pics"></div>
+      <div class="menu-categories">
+        <div class="menu-categories-inner scrollmenu-categories">
+          <span><h4>Promotions</h4></span>
+          <h4>Chicken</h4>
+          <h4>Sandwiches</h4>
+          <h4>Meals</h4>
+          <h4>$5 fill ups</h4>
+          <h4>Sides</h4>
+          <h4>Classics</h4>
+          <h4>Desserts</h4>
+          <h4>Drinks</h4>
+          <h4><span>Sauces</span></h4>
+        </div>
+      </div>
+      <div class="menu-pics scrollmenu-pics">
+        <h2>Howdy, folks!</h2>
+      </div>
     </div>
 
     <div class="bottom-section">
@@ -46,7 +76,11 @@
         </div>
       </div>
 
-      <div class="carousel"></div>
+      <div id="carousel_1"><a href="" target="_blank"></a></div>
+      <div id="carousel_2"><a href="https://www.kfclimited.com/StaticPage.aspx?spid=12765" target="_blank"></a></div>
+      <div id="carousel_3"><a href="" target="_blank"></a></div>
+      <div id="carousel_4"><a href="https://www.kfclimited.com/" target="_blank"></a></div>
+      <div id="carousel_5"><a href="http://chickenchattin.kfc.com/" target="_blank"></a></div>
     </div>
 
     <div class="store-locator">
@@ -58,13 +92,27 @@
 
     <script>
       var i = 0;
-      var images = ['../img/carousel_1.jpg', '../img/carousel_2.jpg', '../img/carousel_3.jpg', '../img/carousel_4.jpg', '../img/carousel_5.jpg'];
-      var time = 3000;
+      var ranOnce = false;
+      var images = ['#carousel_1', '#carousel_2', '#carousel_3', '#carousel_4', '#carousel_5'];
 
       function changeImg() {
-        var sliderDiv = document.querySelector('.carousel');
+        if (i === 0 && ranOnce === false) {
+          var sliderDivCurrent = document.querySelector(images[i]);
+          sliderDivCurrent.style.display = 'block';
+          ranOnce = true;
+        } else if (i === 0 && ranOnce === true) {
+          var sliderDivCurrent = document.querySelector(images[i]);
+          var sliderDivPrevious = document.querySelector(images[4]);
 
-        sliderDiv.style.backgroundImage = "url(" + images[i] + ")";
+          sliderDivCurrent.style.display = 'block';
+          sliderDivPrevious.style.display = 'none';
+        } else {
+          var sliderDivCurrent = document.querySelector(images[i]);
+          var sliderDivPrevious = document.querySelector(images[i-1]);
+
+          sliderDivCurrent.style.display = 'block';
+          sliderDivPrevious.style.display = 'none';
+        }
 
         if (i < images.length - 1) {
           i++;
@@ -72,10 +120,12 @@
           i = 0;
         }
 
-        setTimeout("changeImg()", time);
+        setTimeout("changeImg()", 4000);
       }
 
       window.onload = changeImg;
+
+
     </script>
 
   </body>

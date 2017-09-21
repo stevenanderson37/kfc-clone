@@ -1,9 +1,16 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
 /* HEADER */
 header {
   height: 60px;
   width: auto;
   margin: auto;
   background-color: #e4002b;
+  position: relative;
 }
 
 #ham-button {
@@ -77,6 +84,18 @@ header {
   cursor: pointer;
 }
 
+.mail-icon {
+  font-weight: bold;
+}
+
+.no-display-lrg {
+  display: block;
+}
+
+.no-display-sml {
+  display: none;
+}
+
 /* MENU CAROUSEL */
 .menu-carousel {
   width: auto;
@@ -87,11 +106,63 @@ header {
 .menu-categories {
   height: 60px;
   width: 100%;
+  margin: auto;
+}
+
+div.scrollmenu-categories {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.menu-categories-inner {
+  height: auto;
+  width: 875px;
+  margin: auto;
+  display: flex;
+  flex-flow: row;
+  text-align: center;
+  justify-content: center;
+  padding-left: 650px;
+}
+
+.menu-categories span h4 {
+  padding-left: 345px;
+}
+
+.menu-categories h4 span {
+  padding-right: 345px;
+}
+
+.menu-categories h4 {
+  color: rgba(0, 0, 0, .3);
+  margin: auto 12px;
+  font-family: "Interstate-Bold","helvetica-neue",helvetica,sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.menu-categories span h4:hover {
+  color: rgba(228, 0, 43, 1);
+}
+
+.menu-categories h4:hover {
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
 }
 
 .menu-pics {
   height: 210px;
   width: 100%;
+}
+
+.menu-pics h2 {
+  font-family: "PakenhamW00-Black", arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 50px;
 }
 
 /* BOTTOM SECTION */
@@ -127,30 +198,142 @@ header {
   font-family: "PakenhamW00-Black", arial, sans-serif;
   text-transform: uppercase;
   font-size: 40px;
+  line-height: 40px;
   text-align: center;
+  padding-bottom: 2px;
 }
 
 .join-email p {
   height: 52px;
-  width: auto;
+  width: 450px;
   height: auto;
   margin: auto;
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 26px;
   text-align: center;
   letter-spacing: .7px;
-  padding: 10px 20px 0px 20px;
 }
 
 .carousel {
   width: 50vw;
-  height: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  transition: background-image 2s;
+}
+
+#carousel_1 {
+  width: 50vw;
+  height: calc(100vh - 330px);
   background-image: url(../img/carousel_1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  transition: display 2s;
+}
+
+#carousel_1 a {
+  width: 50vw;
+  height: calc(100vh - 330px);
+  background: rgba(255, 255, 255, 0);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#carousel_2 {
+  width: 50vw;
+  height: calc(100vh - 330px);
+  background-image: url(../img/carousel_2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  position: relative;
+  display: none;
+  transition: display 2s;
+}
+
+#carousel_2 a {
+  width: 50vw;
+  height: calc(100vh - 330px);
+  background: rgba(255, 255, 255, 0);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#carousel_3 {
+  width: 50vw;
+  height: calc(100vh - 330px);
+  background-image: url(../img/carousel_3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  position: relative;
+  display: none;
+  transition: display 2s;
+}
+
+#carousel_3 a {
+  width: 50vw;
+  height: calc(100vh - 330px);
+  background: rgba(255, 255, 255, 0);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#carousel_4 {
+  width: 50vw;
+  height: calc(100vh - 330px);
+  background-image: url(../img/carousel_4.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  position: relative;
+  display: none;
+  transition: display 2s;
+}
+
+#carousel_4 a {
+  width: 50vw;
+  height: calc(100vh - 330px);
+  background: rgba(255, 255, 255, 0);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#carousel_5 {
+  width: 50vw;
+  height: calc(100vh - 330px);
+  background-image: url(../img/carousel_5.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  position: relative;
+  display: none;
+  transition: display 2s;
+}
+
+#carousel_5 a {
+  width: 50vw;
+  height: calc(100vh - 330px);
+  background: rgba(255, 255, 255, 0);
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
 /* STORE LOCATOR */
@@ -160,7 +343,6 @@ header {
 
 .store-locator-bar {
   height: 54px;
-  /*width: 335px;*/
   width: 25vw;
   background-color: rgba(228, 0, 43, .9);
   position: absolute;
@@ -177,7 +359,7 @@ header {
   height: 22px;
   width: 22px;
   position: absolute;
-  top: 15px;
+  bottom: 15px;
   right: 10px;
   background-image: url(../img/icons.png);
   background-repeat: no-repeat;

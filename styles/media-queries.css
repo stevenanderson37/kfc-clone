@@ -1,0 +1,173 @@
+@media(max-width: 1023px) {
+  /* STORE LOCATOR */
+  .store-locator-bar {
+    width: 50vw;
+  }
+}
+
+@media(max-width: 767px) {
+  /* HEADER */
+  header {
+    height: 50px;
+  }
+
+  #ham-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .kfc-logo {
+    height: 50px;
+    width: 58px;
+    background-image: url(../img/kfc-logo-mobile.png);
+  }
+
+  .no-display-lrg {
+    display: none;
+  }
+
+  .no-display-sml {
+    display: block;
+  }
+
+  .social-media-slideout {
+    width: 100vw;
+    height: 50px;
+    margin: auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #e4002b;
+    transform: translateX(calc(100vw - 35px));
+  }
+
+  .social-media-icons {
+    width: 165px;
+  }
+
+  .social-media-icons img {
+    margin-top: 17px;
+  }
+
+  .social-media-button {
+    height: 40px;
+    width: 20px;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    background-image: url(../img/socials.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+  }
+
+  /* MENU CAROUSEL */
+  .menu-categories {
+    height: 29px;
+  }
+
+  .menu-categories h4 {
+    font-size: 12px;
+    line-height: 29px;
+  }
+
+  div.scrollmenu-categories {
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  .menu-categories-inner {
+    width: 100vw;
+    padding-left: 700px;
+  }
+
+  .menu-pics {
+    height: 160px;
+  }
+
+  .menu-pics h2 {
+    font-size: 30px;
+  }
+
+  /* BOTTOM SECTION */
+  .bottom-section {
+    height: calc(100vh - 283px);
+    flex-flow: column;
+    overflow: hidden;
+  }
+
+  .join-email {
+    display: none;
+  }
+
+  .carousel {
+    width: 100vw;
+  }
+
+  #carousel_1 {
+    width: 100vw;
+    height: calc(100vh - 283px);
+  }
+
+  #carousel_1 a {
+    width: 100vw;
+    height: calc(100vh - 283px);
+  }
+
+  #carousel_2 {
+    width: 100vw;
+    height: calc(100vh - 283px);
+  }
+
+  #carousel_2 a {
+    width: 100vw;
+    height: calc(100vh - 283px);
+  }
+
+  #carousel_3 {
+    width: 100vw;
+    height: calc(100vh - 283px);
+  }
+
+  #carousel_3 a {
+    width: 100vw;
+    height: calc(100vh - 283px);
+  }
+
+  #carousel_4 {
+    width: 100vw;
+    height: calc(100vh - 283px);
+  }
+
+  #carousel_4 a {
+    width: 100vw;
+    height: calc(100vh - 283px);
+  }
+
+  #carousel_5 {
+    width: 100vw;
+    height: calc(100vh - 283px);
+  }
+
+  #carousel_5 a {
+    width: 100vw;
+    height: calc(100vh - 283px);
+  }
+
+  /* STORE LOCATOR */
+  .store-locator-bar {
+    height: 44px;
+    width: 100vw;
+    background-color: rgba(228, 0, 43, 1);
+    position: static;
+    font-size: 10px;
+    padding-top: 18px;
+    padding-left: 10px;
+  }
+
+  .store-locator-img {
+    height: 18px;
+    width: 18px;
+    bottom: 13px;
+  }
+}
