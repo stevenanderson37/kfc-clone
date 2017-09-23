@@ -106,18 +106,56 @@ nav {
   transition: transform 500ms;
 }
 
-.nav-thirds {
-  height: 33%;
-  width: 100%;
-  border-bottom: 1px solid #E5E5E5;
-}
-
-.nav-thirds h2 {
+.nav-dropdown-1 h2 {
   font-family: "PakenhamW00-Black", arial, sans-serif;
   text-transform: uppercase;
   font-size: 35px;
   line-height: 35px;
   padding-top: 15%;
+}
+
+.nav-dropdown-1 a {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-thirds {
+  height: calc((100vh - 54px)/3);
+  width: 100%;
+  border-bottom: 1px solid #E5E5E5;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.nav-thirds-1:hover {
+  cursor: pointer;
+  background-image: url(../img/kfc-home-b45644c798db6dda6515971711dfa804c149c07cd8486a727ae967de294f3c53.jpg);
+}
+
+.nav-thirds-2:hover {
+  cursor: pointer;
+  background-image: url(../img/kfc-hwmc-9c92af6af7f917b4c88106e063856b1698daf197ec060d1f4401866b8d1082cf.jpg);
+}
+
+.nav-thirds-3:hover {
+  cursor: pointer;
+  background-image: url(../img/kfc-blog-03c9d686d13706305d3f727d71c7aface027147d7670592b8ff3d865bf27823f.jpg);
+}
+
+.nav-thirds-1:hover h2 {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.nav-thirds-2:hover h2 {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.nav-thirds-3:hover h2 {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .nav-buffer {
@@ -133,12 +171,19 @@ nav {
   font-family: "Interstate-Bold","helvetica-neue",helvetica,sans-serif;
   font-size: 13px;
   line-height: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
   z-index: 9000;
   transform: translateY(100vh);
   transition: transform 500ms;
 }
 
+.nav-dropdown-2 h6 {
+  padding-bottom: 7px;
+}
+
 .nav-dropdown-2 a {
+  font-family: "Interstate-Regular","helvetica-neue",helvetica,sans-serif;
   font-size: 13px;
   line-height: 20px;
   text-decoration: none;
@@ -146,10 +191,43 @@ nav {
 }
 
 .nav-dropdown-2 span {
+  font-family: "Interstate-Bold","helvetica-neue",helvetica,sans-serif;
   font-size: 13px;
   line-height: 20px;
   text-decoration: none;
   color: #e4002b;
+  cursor: pointer;
+}
+
+.nav-dropdown-2 select {
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-left: 20px;
+}
+
+.nav-country-select {
+  width: 25vw;
+  height: 54px;
+  border-top: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
+  background-color: #fff;
+  font-family: "Interstate-Bold","helvetica-neue",helvetica,sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 20px;
+  color: #e4002b;
+  position: absolute;
+  bottom: 54px;
+  left: 20px;
+  margin-left: -20px;
+}
+
+.nav-dropdown-2 select:hover {
+  cursor: pointer;
 }
 
 .tinted-background {
