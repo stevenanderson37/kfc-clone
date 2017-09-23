@@ -19,11 +19,65 @@
     <header>
       <div id="ham-button">
         <div class="ham-menu">
-          <div class="top-bar"></div>
-          <div class="middle-bar"></div>
-          <div class="bottom-bar"></div>
+          <div class="top-bar top-move"></div>
+          <div class="middle-bar middle-opacity"></div>
+          <div class="bottom-bar bottom-move"></div>
         </div>
       </div>
+
+      <nav>
+        <div class="nav-inner">
+          <div class="nav-dropdown-1">
+            <div class="nav-thirds">
+              <h2>The<br>Colonel's Club</h2>
+            </div>
+
+            <div class="nav-thirds">
+              <h2>How we<br>make chicken</h2>
+            </div>
+
+            <div class="nav-thirds">
+              <h2>Chicken<br>chattin’</h2>
+            </div>
+
+            <div class="nav-buffer"></div>
+          </div>
+
+          <div class="nav-dropdown-2">
+            <h6>COMPANY</h6>
+            <a>About KFC</a>
+            <br>
+            <a>KFC Foundation</a>
+            <br>
+            <a>Franchising</a>
+            <br>
+            <a>Responsibility</a>
+            <br>
+            <a>Careers</a>
+            <br>
+            <a>Catering</a>
+            <br>
+            <a>Contact Us</a>
+            <br>
+            <a>Legal</a>
+            <br>
+            <a>Sitemap</a>
+            <br>
+            <h6>NUTRITION</h6>
+            <a>Nutrition Calculator</a>
+            <br>
+            <a>Full Nutrition Guide</a>
+            <br>
+            <a>Food Allergies & Sensitivities</a>
+            <br>
+            <span><a>KFC LIMITED</a></span>
+            <br>
+            <span><a>ESPAÑOL</a></span>
+          </div>
+
+          <div class="tinted-background"></div>
+        </div>
+      </nav>
 
       <div class="kfc-logo"></div>
 
@@ -90,58 +144,7 @@
       </div>
     </div>
 
-    <script>
-      var i = 0;
-      var ranOnce = false;
-      var images = ['#carousel_1', '#carousel_2', '#carousel_3', '#carousel_4', '#carousel_5'];
-
-      function changeImg() {
-        if (i === 0 && ranOnce === false) {
-          var sliderDivCurrent = document.querySelector(images[i]);
-          sliderDivCurrent.style.display = 'block';
-          ranOnce = true;
-        } else if (i === 0 && ranOnce === true) {
-          var sliderDivCurrent = document.querySelector(images[i]);
-          var sliderDivPrevious = document.querySelector(images[4]);
-
-          sliderDivCurrent.style.display = 'block';
-          sliderDivPrevious.style.display = 'none';
-        } else {
-          var sliderDivCurrent = document.querySelector(images[i]);
-          var sliderDivPrevious = document.querySelector(images[i-1]);
-
-          sliderDivCurrent.style.display = 'block';
-          sliderDivPrevious.style.display = 'none';
-        }
-
-        if (i < images.length - 1) {
-          i++;
-        } else {
-          i = 0;
-        }
-
-        setTimeout("changeImg()", 4000);
-      }
-
-      window.onload = changeImg;
-
-      // SOCIAL MEDIA BUTTON CLICK FOR TRANSFORM
-      var socialMediaButton = document.querySelector('#social-media-button');
-      var click = false;
-
-      socialMediaButton.addEventListener('click', function() {
-        var socialMediaSlideout = document.querySelector('.social-media-slideout');
-
-        if (click === false) {
-          click = true;
-          socialMediaSlideout.style.transform = 'translateX(0px)';
-        } else {
-          click = false;
-          socialMediaSlideout.style.transform = 'translateX(calc(100vw - 35px))';
-        }
-      });
-
-    </script>
+    <script src="./js/main.js"></script>
 
   </body>
 </html>

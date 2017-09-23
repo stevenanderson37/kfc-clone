@@ -37,12 +37,24 @@ header {
   top: 0px;
 }
 
+.top-move {
+  transform: translateY(0px) rotateZ(0deg);
+  transition: transform 300ms;
+  /*transition: transform 300ms linear 300ms;*/
+}
+
 .middle-bar {
   height: 2px;
   width: 12px;
   background-color: #fff;
   position: absolute;
   top: calc(50% - 1px);
+  /*transition: width 300ms;*/
+}
+
+.middle-opacity {
+  opacity: 1;
+  transition: opacity 300ms;
 }
 
 .bottom-bar {
@@ -51,6 +63,106 @@ header {
   background-color: #fff;
   position: absolute;
   bottom: 0px;
+  /*transition: width 300ms;*/
+}
+
+.bottom-move {
+  transform: translateY(0px) rotateZ(0deg);
+  transition: transform 300ms;
+  /*transition: transform 300ms linear 300ms;*/
+}
+
+nav {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  overflow: hidden;
+  z-index: -1;
+  transition: z-index 3s;
+}
+
+.nav-inner {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  display: flex;
+  flex-flow: row;
+}
+
+.nav-dropdown-1 {
+  width: 25vw;
+  height: calc(100vh - 60px);
+  background-color: #fff;
+  border-right: 1px solid #E5E5E5;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  z-index: 9000;
+  transform: translateY(-100vh);
+  transition: transform 500ms;
+}
+
+.nav-thirds {
+  height: 33%;
+  width: 100%;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.nav-thirds h2 {
+  font-family: "PakenhamW00-Black", arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 35px;
+  line-height: 35px;
+  padding-top: 15%;
+}
+
+.nav-buffer {
+  height: 54px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.nav-dropdown-2 {
+  width: 25vw;
+  height: calc(100vh - 60px);
+  background-color: #fff;
+  font-family: "Interstate-Bold","helvetica-neue",helvetica,sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  z-index: 9000;
+  transform: translateY(100vh);
+  transition: transform 500ms;
+}
+
+.nav-dropdown-2 a {
+  font-size: 13px;
+  line-height: 20px;
+  text-decoration: none;
+  color: #e4002b;
+}
+
+.nav-dropdown-2 span {
+  font-size: 13px;
+  line-height: 20px;
+  text-decoration: none;
+  color: #e4002b;
+}
+
+.tinted-background {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  background-color: rgba(0, 0, 0, .85);
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  z-index: 999;
+  transform: translateY(-120px);
+  opacity: 0;
+  transition: opacity 500ms;
 }
 
 .kfc-logo {
@@ -160,6 +272,7 @@ header {
   overflow: hidden;
 }
 
+/* BOTTOM SECTION: JOIN EMAIL */
 .join-email {
   width: 50vw;
   height: 100%;
@@ -173,10 +286,11 @@ header {
 .join-email-inner {
   height: 100%;
   width: auto;
-  margin-top: 20vh;
+  margin-top: 23vh;
   align-items: center;
   justify-content: center;
   text-align: center;
+  transition: margin-top 400ms;
 }
 
 .join-email h2 {
@@ -200,8 +314,19 @@ header {
   line-height: 26px;
   text-align: center;
   letter-spacing: .7px;
+  opacity: 0.0;
+  transition: opacity 600ms;
 }
 
+.join-email:hover .join-email-inner {
+  margin-top: 17vh;
+}
+
+.join-email:hover p {
+  opacity: 1.0;
+}
+
+/* BOTTOM SECTION: CAROUSEL/SLIDESHOW */
 .carousel {
   width: 50vw;
   height: auto;
@@ -339,6 +464,7 @@ header {
   font-size: 13px;
   padding-left: 20px;
   padding-top: 20px;
+  z-index: 9999;
 }
 
 .store-locator-img {
