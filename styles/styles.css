@@ -35,12 +35,8 @@ header {
   background-color: #fff;
   position: absolute;
   top: 0px;
-}
-
-.top-move {
-  transform: translateY(0px) rotateZ(0deg);
-  transition: transform 300ms;
-  /*transition: transform 300ms linear 300ms;*/
+  transform: rotateZ(0deg);
+  transition: top 200ms linear 200ms, transform 200ms ease 400ms;
 }
 
 .middle-bar {
@@ -49,12 +45,8 @@ header {
   background-color: #fff;
   position: absolute;
   top: calc(50% - 1px);
-  /*transition: width 300ms;*/
-}
-
-.middle-opacity {
   opacity: 1;
-  transition: opacity 300ms;
+  transition: width 200ms linear, opacity 200ms ease 200ms;
 }
 
 .bottom-bar {
@@ -63,13 +55,7 @@ header {
   background-color: #fff;
   position: absolute;
   bottom: 0px;
-  /*transition: width 300ms;*/
-}
-
-.bottom-move {
-  transform: translateY(0px) rotateZ(0deg);
-  transition: transform 300ms;
-  /*transition: transform 300ms linear 300ms;*/
+  transition: width 200ms linear, bottom 200ms linear 200ms, transform 200ms ease 400ms;
 }
 
 nav {
