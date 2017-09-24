@@ -111,7 +111,7 @@ nav {
   text-transform: uppercase;
   font-size: 35px;
   line-height: 35px;
-  padding-top: 15%;
+  /*padding-top: 15%;*/
 }
 
 .nav-dropdown-1 a {
@@ -126,6 +126,8 @@ nav {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  text-align: center;
+  position: relative;
 }
 
 .nav-thirds-1:hover {
@@ -141,6 +143,21 @@ nav {
 .nav-thirds-3:hover {
   cursor: pointer;
   background-image: url(../img/kfc-blog-03c9d686d13706305d3f727d71c7aface027147d7670592b8ff3d865bf27823f.jpg);
+}
+
+.vertical-align-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+.vertical-align {
+  display: table-cell;
+}
+
+.vertical-align--middle {
+  vertical-align: middle;
 }
 
 .nav-thirds-1:hover h2 {
