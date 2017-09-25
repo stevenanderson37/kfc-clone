@@ -600,6 +600,8 @@ nav {
   padding-left: 20px;
   padding-top: 20px;
   z-index: 9999;
+  transform: translateY(0px);
+  transition: transform 250ms linear;
 }
 
 .store-locator-img {

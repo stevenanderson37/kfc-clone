@@ -191,33 +191,36 @@ var videoPlay1 = document.querySelector('#carousel_1');
 
 videoPlay1.addEventListener('click', function() {
   var videoContainer1 = document.querySelector('#video-container-1');
+  var videoContent = document.querySelector('iframe');
+  var storeLocator = document.querySelector('.store-locator-bar');
 
+  storeLocator.style.transform = 'translateY(60px)';
   videoContainer1.style.transform = 'translateY(0)';
-});
-
-// VIDEO 1 HIDE
-var closeBox_1 = document.querySelector('#close-box-1');
-
-closeBox_1.addEventListener('click', function() {
-  var videoContainer1 = document.querySelector('#video-container-1');
-
-  videoContainer1.style.transform = 'translateY(100vh)';
+  videoContent.src = "https://www.youtube.com/embed/bq6bYRUcf-A?autoplay=1";
 });
 
 // VIDEO 2 SHOW AND PLAY
 var videoPlay2 = document.querySelector('#carousel_3');
 
 videoPlay2.addEventListener('click', function() {
-  var videoContainer2 = document.querySelector('#video-container-2');
+  var videoContainer1 = document.querySelector('#video-container-1');
+  var videoContent = document.querySelector('iframe');
+  var storeLocator = document.querySelector('.store-locator-bar');
 
-  videoContainer2.style.transform = 'translateY(0)';
+  storeLocator.style.transform = 'translateY(60px)';
+  videoContainer1.style.transform = 'translateY(0)';
+  videoContent.src = "https://www.youtube.com/embed/Um_aUxoAcSE?autoplay=1";
 });
 
-// VIDEO 2 HIDE
-var closeBox_2 = document.querySelector('#close-box-2');
+// VIDEO HIDE AND RESET SOURCE
+var closeBox_1 = document.querySelector('#close-box-1');
 
-closeBox_2.addEventListener('click', function() {
-  var videoContainer2 = document.querySelector('#video-container-2');
+closeBox_1.addEventListener('click', function() {
+  var videoContainer1 = document.querySelector('#video-container-1');
+  var videoContent = document.querySelector('iframe');
+  var storeLocator = document.querySelector('.store-locator-bar');
 
-  videoContainer2.style.transform = 'translateY(100vh)';
+  videoContainer1.style.transform = 'translateY(100vh)';
+  videoContent.src = "";
+  storeLocator.style.transform = 'translateY(0px)';
 });
