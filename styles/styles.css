@@ -291,12 +291,15 @@ nav {
   width: auto;
   height: auto;
   background-color: #fff;
+  position: relative;
 }
 
 .menu-categories {
   height: 60px;
   width: 100%;
   margin: auto;
+  opacity: 0;
+  transition: opacity 600ms;
 }
 
 .menu-categories-inner {
@@ -331,18 +334,125 @@ nav {
 .menu-pics {
   height: 210px;
   width: 100%;
+  opacity: 0;
+  display: flex;
+  flex-flow: row;
+  transition: opacity 600ms;
 }
 
 .scrollmenu-pics {
-
+  padding-left: 450px;
+  padding-right: 450px;
 }
 
-.menu-pics h2 {
+div.scrollmenu-pics {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.scrollmenu-pics img {
+  width: 140px;
+  height: auto;
+  padding-top: 20px;
+  margin: auto 10px;
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+.scrollmenu-pics img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.howdy {
+  position: absolute;
+  top: 100px;
+  left: calc(50% - 121.5px);
+  opacity: 1;
+  transition: opacity 600ms;
+}
+
+.howdy h2 {
   font-family: "PakenhamW00-Black", arial, sans-serif;
   text-transform: uppercase;
   font-size: 40px;
   text-align: center;
-  padding-top: 50px;
+}
+
+.menu-animated {
+  -ms-animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+
+  -ms-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  -ms-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  -ms-animation-name: fadeOut;
+  -webkit-animation-name: fadeOut;
+  -moz-animation-name: fadeOut;
+  -o-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -ms-animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  animation-name: fadeIn;
 }
 
 /* BOTTOM SECTION */
@@ -654,11 +764,6 @@ nav {
 }
 
 #video-container-1 {
-  transform: translateY(100vh);
-  transition: transform 300ms ease;
-}
-
-#video-container-2 {
   transform: translateY(100vh);
   transition: transform 300ms ease;
 }

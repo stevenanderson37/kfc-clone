@@ -1,3 +1,16 @@
+// ANIMATIONS PERFORMED ONLOAD
+function animateOnload() {
+  var howdyText = document.querySelector('.howdy');
+  var categories = document.querySelector('.menu-categories');
+  var foodPics = document.querySelector('.menu-pics');
+
+  howdyText.style.opacity = '0';
+  categories.style.opacity = '1';
+  foodPics.style.opacity = '1';
+}
+
+window.onload = animateOnload;
+
 // SLIDESHOW / CAROUSEL
 var i = 0;
 var ranOnce = false;
