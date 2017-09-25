@@ -578,6 +578,10 @@ nav {
   border: 0px;
 }
 
+.button-container button:hover {
+  cursor: pointer;
+}
+
 /* STORE LOCATOR */
 .store-locator:hover {
   cursor: pointer;
@@ -610,6 +614,7 @@ nav {
   background-size: cover;
 }
 
+/* YOUTUBE VIDEOS */
 .video-container {
   width: 100vw;
   height: calc(100vh - 60px);

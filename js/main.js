@@ -45,6 +45,78 @@ function changeImg() {
 
 window.onload = changeImg;
 
+// CHANGES CAROUSEL BY CLICKING BUTTONS
+var carouselButton_1 = document.querySelector('#circle_1');
+var carouselButton_2 = document.querySelector('#circle_2');
+var carouselButton_3 = document.querySelector('#circle_3');
+var carouselButton_4 = document.querySelector('#circle_4');
+var carouselButton_5 = document.querySelector('#circle_5');
+
+carouselButton_1.addEventListener('click', function() {
+  var sliderDivPrevious = document.querySelector('#carousel_'+i);
+  var circlePrevious = document.querySelector('#circle_'+i);
+  var sliderDivCurrent = document.querySelector('#carousel_1');
+
+  sliderDivCurrent.style.display = 'block';
+  carouselButton_1.style.backgroundColor = '#e4002b';
+  sliderDivPrevious.style.display = 'none';
+  circlePrevious.style.backgroundColor = '#fff';
+
+  return i = 0;
+});
+
+carouselButton_2.addEventListener('click', function() {
+  var sliderDivPrevious = document.querySelector('#carousel_'+i);
+  var circlePrevious = document.querySelector('#circle_'+i);
+  var sliderDivCurrent = document.querySelector('#carousel_2');
+
+  sliderDivPrevious.style.display = 'none';
+  circlePrevious.style.backgroundColor = '#fff';
+  sliderDivCurrent.style.display = 'block';
+  carouselButton_2.style.backgroundColor = '#e4002b';
+
+  return i = 1;
+});
+
+carouselButton_3.addEventListener('click', function() {
+  var sliderDivPrevious = document.querySelector('#carousel_'+i);
+  var circlePrevious = document.querySelector('#circle_'+i);
+  var sliderDivCurrent = document.querySelector('#carousel_3');
+
+  sliderDivCurrent.style.display = 'block';
+  carouselButton_3.style.backgroundColor = '#e4002b';
+  sliderDivPrevious.style.display = 'none';
+  circlePrevious.style.backgroundColor = '#fff';
+
+  return i = 2;
+});
+
+carouselButton_4.addEventListener('click', function() {
+  var sliderDivPrevious = document.querySelector('#carousel_'+i);
+  var circlePrevious = document.querySelector('#circle_'+i);
+  var sliderDivCurrent = document.querySelector('#carousel_4');
+
+  sliderDivCurrent.style.display = 'block';
+  carouselButton_4.style.backgroundColor = '#e4002b';
+  sliderDivPrevious.style.display = 'none';
+  circlePrevious.style.backgroundColor = '#fff';
+
+  return i = 3;
+});
+
+carouselButton_5.addEventListener('click', function() {
+  var sliderDivPrevious = document.querySelector('#carousel_'+i);
+  var circlePrevious = document.querySelector('#circle_'+i);
+  var sliderDivCurrent = document.querySelector('#carousel_5');
+
+  sliderDivCurrent.style.display = 'block';
+  carouselButton_5.style.backgroundColor = '#e4002b';
+  sliderDivPrevious.style.display = 'none';
+  circlePrevious.style.backgroundColor = '#fff';
+
+  return i = 4;
+});
+
 // SOCIAL MEDIA BUTTON CLICK FOR TRANSFORM
 var socialMediaButton = document.querySelector('#social-media-button');
 var click = false;
@@ -73,8 +145,8 @@ var navBottomBar = document.querySelector('.bottom-bar');
 var navClick = false;
 
 navButton.addEventListener('click', function() {
-  if (click === false) {
-    click = true;
+  if (navClick === false) {
+    navClick = true;
 
     navTopBar.style.transition = 'top 200ms linear 200ms, transform 200ms ease 400ms';
     navMiddleBar.style.transition = 'width 200ms linear, opacity 200ms ease 200ms';
@@ -93,7 +165,7 @@ navButton.addEventListener('click', function() {
     navSlideUp.style.transform = 'translateY(-60px)';
     navTint.style.opacity = 1;
   } else {
-    click = false;
+    navClick = false;
 
     navTopBar.style.transition = 'transform 200ms ease, top 200ms linear 200ms';
     navMiddleBar.style.transition = 'opacity 200ms ease 200ms, width 200ms linear 400ms';

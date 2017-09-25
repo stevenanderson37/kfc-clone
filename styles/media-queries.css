@@ -186,6 +186,10 @@
     width: 100vw;
   }
 
+  .carousel-container {
+    width: 100vw;
+  }
+
   #carousel_1 {
     width: 100vw;
     height: calc(100vh - 283px);
@@ -234,6 +238,16 @@
   #carousel_5 a {
     width: 100vw;
     height: calc(100vh - 283px);
+  }
+
+  .play-button {
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+  }
+
+  .button-container {
+    bottom: 100px;
+    right: calc(50vw - 53px);
   }
 
   /* STORE LOCATOR */
