@@ -30,9 +30,67 @@
     height: 50px;
   }
 
+  nav {
+    height: calc(100vh - 50px);
+    top: 50px;
+  }
+
+  .nav-inner {
+    height: calc(100vh - 50px);
+  }
+
   #ham-button {
     width: 50px;
     height: 50px;
+  }
+
+  .nav-dropdown-1 {
+    width: 50vw;
+    height: calc(100vh - 50px);
+  }
+
+  .nav-thirds {
+    height: calc((100vh - 44px)/3);
+  }
+
+  .nav-dropdown-1 h2 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .nav-buffer {
+    height: 44px;
+  }
+
+  .nav-dropdown-2 {
+    width: 50vw;
+    height: calc(100vh - 50px);
+    font-size: 10px;
+    line-height: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+
+  .nav-dropdown-2 h6 {
+    padding-bottom: 0px;
+  }
+
+  .nav-dropdown-2 a {
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+  .nav-dropdown-2 span {
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+  .nav-country-select {
+    width: 50vw;
+    height: 44px;
+    font-size: 10px;
+    line-height: 15px;
+    bottom: 44px;
   }
 
   .kfc-logo {
@@ -183,7 +241,6 @@
     height: 44px;
     width: 100vw;
     background-color: rgba(228, 0, 43, 1);
-    position: static;
     font-size: 10px;
     padding-top: 18px;
     padding-left: 10px;

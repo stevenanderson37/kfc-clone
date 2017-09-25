@@ -2,24 +2,36 @@
 var i = 0;
 var ranOnce = false;
 var images = ['#carousel_1', '#carousel_2', '#carousel_3', '#carousel_4', '#carousel_5'];
+var circles = ['#circle_1', '#circle_2', '#circle_3', '#circle_4', '#circle_5'];
 
 function changeImg() {
   if (i === 0 && ranOnce === false) {
     var sliderDivCurrent = document.querySelector(images[i]);
     sliderDivCurrent.style.display = 'block';
+
+    var circleCurrent = document.querySelector(circles[i]);
+    circleCurrent.style.backgroundColor = '#e4002b';
     ranOnce = true;
   } else if (i === 0 && ranOnce === true) {
     var sliderDivCurrent = document.querySelector(images[i]);
     var sliderDivPrevious = document.querySelector(images[4]);
-
     sliderDivCurrent.style.display = 'block';
     sliderDivPrevious.style.display = 'none';
+
+    var circleCurrent = document.querySelector(circles[i]);
+    var circlePrevious = document.querySelector(circles[4]);
+    circleCurrent.style.backgroundColor = '#e4002b';
+    circlePrevious.style.backgroundColor = '#fff';
   } else {
     var sliderDivCurrent = document.querySelector(images[i]);
     var sliderDivPrevious = document.querySelector(images[i-1]);
-
     sliderDivCurrent.style.display = 'block';
     sliderDivPrevious.style.display = 'none';
+
+    var circleCurrent = document.querySelector(circles[i]);
+    var circlePrevious = document.querySelector(circles[i-1]);
+    circleCurrent.style.backgroundColor = '#e4002b';
+    circlePrevious.style.backgroundColor = '#fff';
   }
 
   if (i < images.length - 1) {
@@ -100,4 +112,40 @@ navButton.addEventListener('click', function() {
     navTint.style.opacity = 0;
     navContainer.style.zIndex = '-1';
   }
+});
+
+// VIDEO 1 SHOW AND PLAY
+var videoPlay1 = document.querySelector('#carousel_1');
+
+videoPlay1.addEventListener('click', function() {
+  var videoContainer1 = document.querySelector('#video-container-1');
+
+  videoContainer1.style.transform = 'translateY(0)';
+});
+
+// VIDEO 1 HIDE
+var closeBox_1 = document.querySelector('#close-box-1');
+
+closeBox_1.addEventListener('click', function() {
+  var videoContainer1 = document.querySelector('#video-container-1');
+
+  videoContainer1.style.transform = 'translateY(100vh)';
+});
+
+// VIDEO 2 SHOW AND PLAY
+var videoPlay2 = document.querySelector('#carousel_3');
+
+videoPlay2.addEventListener('click', function() {
+  var videoContainer2 = document.querySelector('#video-container-2');
+
+  videoContainer2.style.transform = 'translateY(0)';
+});
+
+// VIDEO 2 HIDE
+var closeBox_2 = document.querySelector('#close-box-2');
+
+closeBox_2.addEventListener('click', function() {
+  var videoContainer2 = document.querySelector('#video-container-2');
+
+  videoContainer2.style.transform = 'translateY(100vh)';
 });

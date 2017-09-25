@@ -97,10 +97,10 @@ nav {
   text-transform: uppercase;
   font-size: 35px;
   line-height: 35px;
-  /*padding-top: 15%;*/
 }
 
 .nav-dropdown-1 a {
+  cursor: pointer;
   text-decoration: none;
   color: #000;
 }
@@ -117,17 +117,14 @@ nav {
 }
 
 .nav-thirds-1:hover {
-  cursor: pointer;
   background-image: url(../img/kfc-home-b45644c798db6dda6515971711dfa804c149c07cd8486a727ae967de294f3c53.jpg);
 }
 
 .nav-thirds-2:hover {
-  cursor: pointer;
   background-image: url(../img/kfc-hwmc-9c92af6af7f917b4c88106e063856b1698daf197ec060d1f4401866b8d1082cf.jpg);
 }
 
 .nav-thirds-3:hover {
-  cursor: pointer;
   background-image: url(../img/kfc-blog-03c9d686d13706305d3f727d71c7aface027147d7670592b8ff3d865bf27823f.jpg);
 }
 
@@ -336,6 +333,10 @@ nav {
   width: 100%;
 }
 
+.scrollmenu-pics {
+
+}
+
 .menu-pics h2 {
   font-family: "PakenhamW00-Black", arial, sans-serif;
   text-transform: uppercase;
@@ -416,6 +417,13 @@ nav {
   background-size: cover;
   cursor: pointer;
   transition: background-image 2s;
+}
+
+.carousel-container {
+  width: 50vw;
+  height: auto;
+  margin: auto;
+  position: relative;
 }
 
 #carousel_1 {
@@ -528,6 +536,48 @@ nav {
   left: 0px;
 }
 
+.play-button {
+  height: 60px;
+  width: 60px;
+  background-color: #fff;
+  border-radius: 75%;
+  position: absolute;
+  text-align: center;
+  top: calc((100vh - 330px)/2.5);
+  left: calc(25vw - 30px);
+}
+
+.play-button img {
+  width: 15px;
+  height: auto;
+  margin-top: 23px;
+  margin-left: 3px;
+}
+
+.button-container {
+  width: auto;
+  height: auto;
+  position: absolute;
+  bottom: 25px;
+  right: calc(25vw - 53px);
+  z-index: 500;
+}
+
+.button-container button {
+  height: 8px;
+  width: 8px;
+  margin: auto 5px;
+  padding: 3px;
+  border-radius: 75%;
+  background-color: #fff;
+  border: 0px;
+  outline: none;
+}
+
+.button-container button:focus {
+  border: 0px;
+}
+
 /* STORE LOCATOR */
 .store-locator:hover {
   cursor: pointer;
@@ -558,4 +608,50 @@ nav {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
+}
+
+.video-container {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  background-color: #000;
+  position: absolute;
+  top: 60px;
+  z-index: 5000;
+}
+
+.close-box {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.top-line {
+  height: 2px;
+  width: 20px;
+  background-color: #e4002b;
+  margin-top: 23px;
+  margin-left: 15px;
+  transform: translateY(2px) rotateZ(-45deg);
+}
+
+.bottom-line {
+  height: 2px;
+  width: 20px;
+  margin-left: 15px;
+  background-color: #e4002b;
+  transform: rotateZ(45deg);
+}
+
+#video-container-1 {
+  transform: translateY(100vh);
+  transition: transform 300ms ease;
+}
+
+#video-container-2 {
+  transform: translateY(100vh);
+  transition: transform 300ms ease;
 }
