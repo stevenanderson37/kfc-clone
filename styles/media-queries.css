@@ -1,4 +1,13 @@
 @media(max-width: 1023px) {
+  /* HEADER */
+  .nav-dropdown-1 {
+    width: 50vw;
+  }
+
+  .nav-dropdown-2 {
+    width: 50vw;
+  }
+
   /* STORE LOCATOR */
   .store-locator-bar {
     width: 50vw;
@@ -176,6 +185,7 @@
     height: calc(100vh - 283px);
     flex-flow: column;
     overflow: hidden;
+    margin-top: 0px;
   }
 
   .join-email {

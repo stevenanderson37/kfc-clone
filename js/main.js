@@ -155,6 +155,7 @@ var navTint = document.querySelector('.tinted-background');
 var navTopBar = document.querySelector('.top-bar');
 var navMiddleBar = document.querySelector('.middle-bar');
 var navBottomBar = document.querySelector('.bottom-bar');
+var storeFinder = document.querySelector('.store-locator-bar');
 var navClick = false;
 
 navButton.addEventListener('click', function() {
@@ -177,6 +178,10 @@ navButton.addEventListener('click', function() {
     navSlideDown.style.transform = 'translateY(-60px)';
     navSlideUp.style.transform = 'translateY(-60px)';
     navTint.style.opacity = 1;
+
+    // if (window.innerWidth <= 1023) {
+    //   storeFinder.style.width = '100vw';
+    // }
   } else {
     navClick = false;
 
@@ -196,6 +201,10 @@ navButton.addEventListener('click', function() {
     navSlideUp.style.transform = 'translateY(100vh)';
     navTint.style.opacity = 0;
     navContainer.style.zIndex = '-1';
+
+    // if (window.innerWidth <= 1023 && window.innerWidth > 767) {
+    //   storeFinder.style.width = '50vw';
+    // }
   }
 });
 
@@ -237,3 +246,20 @@ closeBox_1.addEventListener('click', function() {
   videoContent.src = "";
   storeLocator.style.transform = 'translateY(0px)';
 });
+
+// FUNCTION THAT CHANGES THE VERTICAL TO HORIZONTAL SCROLLING FOR THE DIV WITH THE FOOD PICTURES.
+var menuFood = document.querySelector('.scrollmenu-pics');
+
+var mouseWheelEvt = function (event) {
+  if (menuFood.doScroll) {
+    menuFood.doScroll(event.wheelDelta>0?"left":"right");
+  } else if ((event.wheelDelta || event.detail) > 0) {
+    menuFood.scrollLeft -= 20;
+  } else {
+    menuFood.scrollLeft += 20;
+  }
+
+  return false;
+}
+
+menuFood.addEventListener("mousewheel", mouseWheelEvt);

@@ -331,9 +331,15 @@ nav {
   cursor: pointer;
 }
 
+.scrollmenu-categories {
+  height: auto;
+  padding-bottom: 25px;
+}
+
 .menu-pics {
-  height: 210px;
+  height: 235px;
   width: 100%;
+  background-color: #fff;
   opacity: 0;
   display: flex;
   flex-flow: row;
@@ -459,6 +465,7 @@ div.scrollmenu-pics {
 .bottom-section {
   height: calc(100vh - 330px);
   width: auto;
+  margin-top: -25px;
   display: flex;
   flex-flow: row;
   overflow: hidden;
@@ -472,6 +479,8 @@ div.scrollmenu-pics {
   background-repeat: no-repeat;
   background-position: right;
   background-size: cover;
+  position: relative;
+  display: block;
   cursor: pointer;
 }
 
@@ -711,7 +720,7 @@ div.scrollmenu-pics {
   padding-top: 20px;
   z-index: 9999;
   transform: translateY(0px);
-  transition: transform 250ms linear;
+  transition: transform 250ms linear, width 500ms ease;
 }
 
 .store-locator-img {
