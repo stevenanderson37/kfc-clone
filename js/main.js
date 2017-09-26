@@ -247,6 +247,32 @@ closeBox_1.addEventListener('click', function() {
   storeLocator.style.transform = 'translateY(0px)';
 });
 
+// COLONEL'S CLUB SHOW
+var joinIcon = document.querySelector('.mail-icon');
+var joinDiv = document.querySelector('.join-email');
+
+function openColonelsClub() {
+  var clubContainer = document.querySelector('.colonels-club');
+  var storeLocator = document.querySelector('.store-locator-bar');
+
+  storeLocator.style.transform = 'translateY(60px)';
+  clubContainer.style.transform = 'translateY(0)';
+}
+
+joinIcon.addEventListener('click', openColonelsClub);
+joinDiv.addEventListener('click', openColonelsClub);
+
+// COLONEL'S CLUB HIDE
+var closeBox_2 = document.querySelector('#close-box-2');
+
+closeBox_2.addEventListener('click', function() {
+  var clubContainer = document.querySelector('.colonels-club');
+  var storeLocator = document.querySelector('.store-locator-bar');
+
+  clubContainer.style.transform = 'translateY(100vh)';
+  storeLocator.style.transform = 'translateY(0px)';
+});
+
 // FUNCTION THAT CHANGES THE VERTICAL TO HORIZONTAL SCROLLING FOR THE DIV WITH THE FOOD PICTURES.
 var menuFood = document.querySelector('.scrollmenu-pics');
 

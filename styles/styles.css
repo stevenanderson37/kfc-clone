@@ -752,22 +752,27 @@ div.scrollmenu-pics {
   position: absolute;
   top: 20px;
   right: 20px;
+  box-shadow: 0px 0px 5px #ccc;
+  z-index: 9999;
+}
+
+.close-box:hover {
   cursor: pointer;
 }
 
 .top-line {
   height: 2px;
-  width: 20px;
+  width: 25px;
   background-color: #e4002b;
   margin-top: 23px;
-  margin-left: 15px;
+  margin-left: 13px;
   transform: translateY(2px) rotateZ(-45deg);
 }
 
 .bottom-line {
   height: 2px;
-  width: 20px;
-  margin-left: 15px;
+  width: 25px;
+  margin-left: 13px;
   background-color: #e4002b;
   transform: rotateZ(45deg);
 }
@@ -775,4 +780,24 @@ div.scrollmenu-pics {
 #video-container-1 {
   transform: translateY(100vh);
   transition: transform 300ms ease;
+}
+
+/* THE COLONEL'S CLUB FORM */
+.colonels-club {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  background-color: #f8f8f5;
+  position: absolute;
+  top: 60px;
+  z-index: 5000;
+  text-align: center;
+  transform: translateY(100vh);
+  transition: transform 300ms ease;
+}
+
+.colonels-club h2 {
+  font-family: "PakenhamW00-Black", arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 40px;
+  text-align: center;
 }
