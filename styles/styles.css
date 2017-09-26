@@ -1,7 +1,8 @@
-body {
+html,body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  position: relative;
 }
 
 /* HEADER */
@@ -146,6 +147,7 @@ nav {
 .nav-thirds-1:hover h2 {
   color: #fff;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .nav-thirds-2:hover h2 {
@@ -660,8 +662,8 @@ div.scrollmenu-pics {
   width: 60px;
   background-color: #fff;
   border-radius: 75%;
-  position: absolute;
   text-align: center;
+  position: absolute;
   top: calc((100vh - 330px)/2.5);
   left: calc(25vw - 30px);
 }

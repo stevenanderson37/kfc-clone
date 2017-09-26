@@ -250,6 +250,7 @@ closeBox_1.addEventListener('click', function() {
 // COLONEL'S CLUB SHOW
 var joinIcon = document.querySelector('.mail-icon');
 var joinDiv = document.querySelector('.join-email');
+var joinNavDiv = document.querySelector('.nav-thirds-1');
 
 function openColonelsClub() {
   var clubContainer = document.querySelector('.colonels-club');
@@ -261,6 +262,28 @@ function openColonelsClub() {
 
 joinIcon.addEventListener('click', openColonelsClub);
 joinDiv.addEventListener('click', openColonelsClub);
+joinNavDiv.addEventListener('click', function() {
+  navClick = false;
+
+  navTopBar.style.transition = 'transform 200ms ease, top 200ms linear 200ms';
+  navMiddleBar.style.transition = 'opacity 200ms ease 200ms, width 200ms linear 400ms';
+  navBottomBar.style.transition = 'transform 200ms ease, bottom 200ms linear 200ms, width 200ms linear 400ms';
+
+  navMiddleBar.style.width = '12px';
+  navBottomBar.style.width = '18px';
+  navMiddleBar.style.opacity = 1;
+  navTopBar.style.top = '0px';
+  navTopBar.style.transform = 'rotateZ(0deg)';
+  navBottomBar.style.bottom = '0px';
+  navBottomBar.style.transform = 'rotateZ(0deg)';
+
+  navSlideDown.style.transform = 'translateY(-100vh)';
+  navSlideUp.style.transform = 'translateY(100vh)';
+  navTint.style.opacity = 0;
+  navContainer.style.zIndex = '-1';
+
+  openColonelsClub();
+});
 
 // COLONEL'S CLUB HIDE
 var closeBox_2 = document.querySelector('#close-box-2');
@@ -275,8 +298,9 @@ closeBox_2.addEventListener('click', function() {
 
 // FUNCTION THAT CHANGES THE VERTICAL TO HORIZONTAL SCROLLING FOR THE DIV WITH THE FOOD PICTURES.
 var menuFood = document.querySelector('.scrollmenu-pics');
+var menuGroups = document.querySelector('.scrollmenu-categories');
 
-var mouseWheelEvt = function (event) {
+var mouseWheelEvtPics = function (event) {
   if (menuFood.doScroll) {
     menuFood.doScroll(event.wheelDelta>0?"left":"right");
   } else if ((event.wheelDelta || event.detail) > 0) {
@@ -288,4 +312,17 @@ var mouseWheelEvt = function (event) {
   return false;
 }
 
-menuFood.addEventListener("mousewheel", mouseWheelEvt);
+var mouseWheelEvtGroups = function (event) {
+  if (menuGroups.doScroll) {
+    menuGroups.doScroll(event.wheelDelta>0?"left":"right");
+  } else if ((event.wheelDelta || event.detail) > 0) {
+    menuGroups.scrollLeft -= 20;
+  } else {
+    menuGroups.scrollLeft += 20;
+  }
+
+  return false;
+}
+
+menuFood.addEventListener("mousewheel", mouseWheelEvtPics);
+menuGroups.addEventListener("mousewheel", mouseWheelEvtGroups);
