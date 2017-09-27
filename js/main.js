@@ -326,3 +326,49 @@ var mouseWheelEvtGroups = function (event) {
 
 menuFood.addEventListener("mousewheel", mouseWheelEvtPics);
 menuGroups.addEventListener("mousewheel", mouseWheelEvtGroups);
+
+// ADDS BACKGROUND-COLOR TO INPUT TYPE IF THE INPUT IF INPUT IS POPULATED BY TYPE, SO THE LABEL DISAPPEARS BEHIND IT.
+function checkFilledFirst() {
+	var inputVal = document.querySelector("#first-name");
+
+  if (inputVal.value === "") {
+    inputVal.style.backgroundColor = "";
+  } else {
+    inputVal.style.backgroundColor = "#f8f8f5";
+  }
+}
+
+function checkFilledLast() {
+	var inputVal = document.querySelector("#last-name");
+
+  if (inputVal.value === "") {
+    inputVal.style.backgroundColor = "";
+  } else {
+    inputVal.style.backgroundColor = "#f8f8f5";
+  }
+}
+
+function checkFilledEmail() {
+	var inputVal = document.querySelector("#e-mail");
+
+  if (inputVal.value === "") {
+    inputVal.style.backgroundColor = "";
+  } else {
+    inputVal.style.backgroundColor = "#f8f8f5";
+  }
+}
+
+function checkFilledZip() {
+	var inputVal = document.querySelector("#zip-code");
+
+  if (inputVal.value === "") {
+    inputVal.style.backgroundColor = "";
+  } else {
+    inputVal.style.backgroundColor = "#f8f8f5";
+  }
+}
+
+checkFilledFirst();
+checkFilledLast();
+checkFilledEmail();
+checkFilledZip();

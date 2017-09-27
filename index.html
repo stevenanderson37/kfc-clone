@@ -581,27 +581,30 @@
           <div class="col-club-name">
             <div id="col-club-first" class="col-club-inputs">
               <label for="first-name">First Name</label>
-              <input id="first-name" type="text">
+              <input id="first-name" type="text" onchange="checkFilledFirst();" required />
             </div>
             <div id="col-club-last" class="col-club-inputs">
               <label for="last-name">Last Name</label>
-              <input id="last-name" type="text">
+              <input id="last-name" type="text" onchange="checkFilledLast();" required />
             </div>
           </div>
 
           <div class="col-club-contact">
             <div id="col-club-email" class="col-club-inputs">
               <label for="e-mail">E-Mail</label>
-              <input id="e-mail" type="text">
+              <input id="e-mail" type="text" onchange="checkFilledEmail();" required />
             </div>
             <div id="col-club-zip" class="col-club-inputs">
               <label for="zip-code">Zip Code</label>
-              <input id="zip-code" type="text">
+              <input id="zip-code" type="text" onchange="checkFilledZip();" required />
             </div>
           </div>
 
           <div class="col-club-terms">
-            <input id="terms-and-conditions" type="checkbox">
+            <div class="checkbox-container">
+              <div class="checkbox-checked"></div>
+              <input id="terms-and-conditions" type="checkbox" required />
+            </div>
             <label for="terms-and-conditions">I hereby accept the <span>Colonel’s Terms & Conditions</span>.</label>
           </div>
 

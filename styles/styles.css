@@ -5,10 +5,20 @@ html,body {
   position: relative;
 }
 
-textarea, input {
+input[type="text"] {
   outline: none;
   border: 0px;
   background: none;
+}
+
+input[type="checkbox"] {
+  outline: none;
+  border: 0px;
+  background: none;
+  border-radius: 0px;
+  background-color: #f8f8f5;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 button {
@@ -907,22 +917,6 @@ ul.scrollmenu-pics {
   position: relative;
 }
 
-.col-club-terms {
-  float: left;
-  margin-bottom: 50px;
-  font-family: "Interstate-Reg","helvetica-neue",helvetica,sans-serif;
-  font-size: 13px;
-  line-height: 26px;
-}
-
-.col-club-terms label {
-  padding-left: 5px;
-}
-
-.col-club-terms span {
-  text-decoration: underline;
-}
-
 #col-club-first {
   width: 48%;
   height: auto;
@@ -949,7 +943,76 @@ ul.scrollmenu-pics {
 
 .colonels-club input {
   border-bottom: 1px solid #BEBEBE;
+  transition: border-bottom 300ms ease;
 }
+
+.colonels-club input:focus {
+  border-bottom: 1px solid #000;
+}
+
+.col-club-terms {
+  float: left;
+  margin-bottom: 50px;
+  font-family: "Interstate-Reg","helvetica-neue",helvetica,sans-serif;
+  font-size: 13px;
+  line-height: 26px;
+  display: flex;
+  flex-flow: row;
+}
+
+.col-club-terms label {
+  padding-left: 10px;
+}
+
+.col-club-terms span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.col-club-terms span:hover {
+  color: #000;
+}
+
+.checkbox-container {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  margin-top: 5px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #BEBEBE;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 0px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.checkbox-checked {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: calc(50% - 7.5px);
+  left: calc(50% - 7.5px);
+  background-image: url('data:image/svg+xml;charset=utf8,<svg viewBox="0 0 24 19" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path id="Shape" d="M-4-7h32v32h-32z"/><path fill="#e4002b" fill-rule="nonzero" d="M8 14.6l-5.6-5.6-1.867 1.867 7.467 7.467 16-16-1.867-1.867z"/></g></svg>');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #f8f8f5;
+  pointer-events: none;
+}
+
+input[type="checkbox"]:checked {
+  opacity: 0;
+}
+
+/*input[type="text"]:invalid {
+  border-bottom: 1px solid #e4002b;
+}*/
 
 .col-club-form button {
   width: 143px;
