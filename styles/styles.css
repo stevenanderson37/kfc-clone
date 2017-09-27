@@ -353,23 +353,56 @@ nav {
   padding-right: 450px;
 }
 
-div.scrollmenu-pics {
+ul.scrollmenu-pics {
   overflow: auto;
   white-space: nowrap;
+  display: flex;
+  flex-flow: row;
+  text-align: center;
+  margin: 10px 10px;
 }
 
 .scrollmenu-pics img {
   width: 140px;
   height: auto;
-  padding-top: 20px;
-  margin: auto 10px;
   opacity: .5;
   transition: opacity 600ms;
 }
 
-.scrollmenu-pics img:hover {
+.scrollmenu-pics li:hover img {
   opacity: 1;
   cursor: pointer;
+}
+
+.scrollmenu-pics li {
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.menu-pics-container {
+  width: 140px;
+  height: auto;
+  display: flex;
+  flex-flow: column;
+}
+
+.menu-pics-container h6 {
+  font-family: 'Roboto', "helvetica-neue", helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 15px;
+  color: #a4a4a4;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.scrollmenu-pics li:hover h6 {
+  opacity: 1;
+}
+
+#menu-last-pic {
+  padding-right: 600px;
 }
 
 .howdy {
