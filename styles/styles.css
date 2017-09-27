@@ -5,6 +5,18 @@ html,body {
   position: relative;
 }
 
+textarea, input {
+  outline: none;
+  border: 0px;
+  background: none;
+}
+
+button {
+  outline: none;
+  border: 0px;
+  background: none;
+}
+
 /* HEADER */
 header {
   height: 60px;
@@ -830,9 +842,116 @@ ul.scrollmenu-pics {
   transition: transform 300ms ease;
 }
 
+.col-club-form {
+  width: 700px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  top: calc((50vh - 60px) - 186px);
+  left: calc(50vw - 350px);
+}
+
+.col-club-form form {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  text-align: left;
+  color: #BEBEBE;
+}
+
 .colonels-club h2 {
   font-family: "PakenhamW00-Black", arial, sans-serif;
   text-transform: uppercase;
   font-size: 40px;
   text-align: center;
+  margin-bottom: 50px;
+}
+
+.col-club-inputs {
+  display: flex;
+  flex-flow: column;
+}
+
+.col-club-inputs input {
+  font-family: "Interstate-Bold","helvetica-neue",helvetica,sans-serif;
+  font-size: 26px;
+}
+
+.col-club-inputs label {
+  padding-left: 10px;
+  font-family: "Interstate-Reg","helvetica-neue",helvetica,sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 26px;
+  margin-bottom: -30px;
+}
+
+.col-club-name {
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.col-club-contact {
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.col-club-terms {
+  float: left;
+  margin-bottom: 50px;
+  font-family: "Interstate-Reg","helvetica-neue",helvetica,sans-serif;
+  font-size: 13px;
+  line-height: 26px;
+}
+
+.col-club-terms label {
+  padding-left: 5px;
+}
+
+.col-club-terms span {
+  text-decoration: underline;
+}
+
+#col-club-first {
+  width: 48%;
+  height: auto;
+  float: left;
+}
+
+#col-club-last {
+  width: 48%;
+  height: auto;
+  float: right;
+}
+
+#col-club-email {
+  width: 68%;
+  height: auto;
+  float: left;
+}
+
+#col-club-zip {
+  width: 28%;
+  height: auto;
+  float: right;
+}
+
+.colonels-club input {
+  border-bottom: 1px solid #BEBEBE;
+}
+
+.col-club-form button {
+  width: 143px;
+  height: 52px;
+  margin: auto;
+  background: #BEBEBE;
+  color: #fff;
+  font-family: "Interstate-Reg","helvetica-neue",helvetica,sans-serif;
+  font-size: 13px;
+  line-height: 26px;
+  text-transform: uppercase;
 }

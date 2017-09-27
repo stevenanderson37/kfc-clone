@@ -575,26 +575,38 @@
         <div class="bottom-line"></div>
       </div>
 
-      <div class="vertical-align-wrap">
-        <div class="vertical-align vertical-align--middle">
-          <h2>The Colonel's Club</h2>
-          <form>
-            <label for="first-name">First Name</label>
-            <input id="first-name" type="text">
-            <label for="last-name">Last Name</label>
-            <input id="last-name" type="text">
-            <br>
-            <label for="e-mail">E-Mail</label>
-            <input id="e-mail" type="text">
-            <label for="zip-code">Zip Code</label>
-            <input id="zip-code" type="text">
-            <br>
+      <div class="col-club-form">
+        <h2>The Colonel's Club</h2>
+        <form>
+          <div class="col-club-name">
+            <div id="col-club-first" class="col-club-inputs">
+              <label for="first-name">First Name</label>
+              <input id="first-name" type="text">
+            </div>
+            <div id="col-club-last" class="col-club-inputs">
+              <label for="last-name">Last Name</label>
+              <input id="last-name" type="text">
+            </div>
+          </div>
+
+          <div class="col-club-contact">
+            <div id="col-club-email" class="col-club-inputs">
+              <label for="e-mail">E-Mail</label>
+              <input id="e-mail" type="text">
+            </div>
+            <div id="col-club-zip" class="col-club-inputs">
+              <label for="zip-code">Zip Code</label>
+              <input id="zip-code" type="text">
+            </div>
+          </div>
+
+          <div class="col-club-terms">
             <input id="terms-and-conditions" type="checkbox">
             <label for="terms-and-conditions">I hereby accept the <span>Colonel’s Terms & Conditions</span>.</label>
-            <br>
-            <button>Submit</button>
-          </form>
-        </div>
+          </div>
+
+          <button>Submit</button>
+        </form>
       </div>
     </div>
 
