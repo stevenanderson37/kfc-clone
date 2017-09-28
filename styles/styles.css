@@ -758,7 +758,7 @@ ul.scrollmenu-pics {
   cursor: pointer;
 }
 
-/* STORE LOCATOR */
+/* STORE LOCATOR BAR */
 .store-locator:hover {
   cursor: pointer;
 }
@@ -790,6 +790,33 @@ ul.scrollmenu-pics {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
+}
+
+/* STORE LOCATOR */
+.store-locator-container {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  background-color: #f8f8f5;
+  position: absolute;
+  top: 60px;
+  z-index: 4000;
+  text-align: center;
+  transform: translateY(100vh);
+  transition: transform 300ms ease;
+}
+
+.store-locator-1 {
+  width: 50vw;
+  height: calc(100vh - 60px);
+  float: left;
+  background-color: lightblue;
+}
+
+.store-locator-2 {
+  width: 50vw;
+  height: calc(100vh - 60px);
+  float: right;
+  background-color: lightgreen;
 }
 
 /* YOUTUBE VIDEOS */

@@ -296,6 +296,28 @@ closeBox_2.addEventListener('click', function() {
   storeLocator.style.transform = 'translateY(0px)';
 });
 
+// STORE LOCATION SHOW
+var storeFinder = document.querySelector('.store-locator');
+
+storeFinder.addEventListener('click', function() {
+  var storeFinderCont = document.querySelector('.store-locator-container');
+  var storeLocator = document.querySelector('.store-locator-bar');
+
+  storeLocator.style.transform = 'translateY(60px)';
+  storeFinderCont.style.transform = 'translateY(0)';
+});
+
+// STORE LOCATOR HIDE
+var closeBox_3 = document.querySelector('#close-box-3');
+
+closeBox_3.addEventListener('click', function() {
+  var clubContainer = document.querySelector('.store-locator-container');
+  var storeLocator = document.querySelector('.store-locator-bar');
+
+  clubContainer.style.transform = 'translateY(100vh)';
+  storeLocator.style.transform = 'translateY(0px)';
+});
+
 // FUNCTION THAT CHANGES THE VERTICAL TO HORIZONTAL SCROLLING FOR THE DIV WITH THE FOOD PICTURES.
 var menuFood = document.querySelector('.scrollmenu-pics');
 var menuGroups = document.querySelector('.scrollmenu-categories');
