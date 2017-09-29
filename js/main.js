@@ -18,30 +18,27 @@ var images = ['#carousel_1', '#carousel_2', '#carousel_3', '#carousel_4', '#caro
 var circles = ['#circle_1', '#circle_2', '#circle_3', '#circle_4', '#circle_5'];
 
 function changeImg() {
+  var sliderDivCurrent = document.querySelector(images[i]);
+  var circleCurrent = document.querySelector(circles[i]);
+
   if (i === 0 && ranOnce === false) {
-    var sliderDivCurrent = document.querySelector(images[i]);
     sliderDivCurrent.style.display = 'block';
 
-    var circleCurrent = document.querySelector(circles[i]);
     circleCurrent.style.backgroundColor = '#e4002b';
     ranOnce = true;
   } else if (i === 0 && ranOnce === true) {
-    var sliderDivCurrent = document.querySelector(images[i]);
     var sliderDivPrevious = document.querySelector(images[4]);
     sliderDivCurrent.style.display = 'block';
     sliderDivPrevious.style.display = 'none';
 
-    var circleCurrent = document.querySelector(circles[i]);
     var circlePrevious = document.querySelector(circles[4]);
     circleCurrent.style.backgroundColor = '#e4002b';
     circlePrevious.style.backgroundColor = '#fff';
   } else {
-    var sliderDivCurrent = document.querySelector(images[i]);
     var sliderDivPrevious = document.querySelector(images[i-1]);
     sliderDivCurrent.style.display = 'block';
     sliderDivPrevious.style.display = 'none';
 
-    var circleCurrent = document.querySelector(circles[i]);
     var circlePrevious = document.querySelector(circles[i-1]);
     circleCurrent.style.backgroundColor = '#e4002b';
     circlePrevious.style.backgroundColor = '#fff';
@@ -297,9 +294,9 @@ closeBox_2.addEventListener('click', function() {
 });
 
 // STORE LOCATION SHOW
-var storeFinder = document.querySelector('.store-locator');
+var storeFinder2 = document.querySelector('.store-locator');
 
-storeFinder.addEventListener('click', function() {
+storeFinder2.addEventListener('click', function() {
   var storeFinderCont = document.querySelector('.store-locator-container');
   var storeLocator = document.querySelector('.store-locator-bar');
 
@@ -435,11 +432,6 @@ function initMap() {
         elementType: 'geometry.stroke',
         stylers: [{color: '#ACACAC'}]
       },
-      // {
-      //   featureType: 'road.local',
-      //   elementType: 'geometry',
-      //   stylers: [{color: '#ffffff'}]
-      // },
       {
         featureType: 'water',
         elementType: 'geometry.fill',

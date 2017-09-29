@@ -343,7 +343,6 @@ nav {
 }
 
 .menu-categories h4 {
-  color: rgba(0, 0, 0, .3);
   margin: auto 12px;
   font-family: "Interstate-Bold","helvetica-neue",helvetica,sans-serif;
   text-transform: uppercase;
@@ -352,11 +351,92 @@ nav {
   text-align: center;
 }
 
-.menu-categories span h4:hover {
+#promotions {
   color: rgba(228, 0, 43, 1);
 }
 
-.menu-categories h4:hover {
+#promotions:hover {
+  color: rgba(228, 0, 43, 1);
+  cursor: pointer;
+}
+
+#chicken {
+  color: rgba(0, 0, 0, .3);
+}
+
+#chicken:hover {
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+#sandwiches {
+  color: rgba(0, 0, 0, .3);
+}
+
+#sandwiches:hover {
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+#meals {
+  color: rgba(0, 0, 0, .3);
+}
+
+#meals:hover {
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+#fill-ups {
+  color: rgba(0, 0, 0, .3);
+}
+
+#fill-ups:hover {
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+#sides {
+  color: rgba(0, 0, 0, .3);
+}
+
+#sides:hover {
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+#classics {
+  color: rgba(0, 0, 0, .3);
+}
+
+#classics:hover {
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+#desserts {
+  color: rgba(0, 0, 0, .3);
+}
+
+#desserts:hover {
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+#drinks {
+  color: rgba(0, 0, 0, .3);
+}
+
+#drinks:hover {
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+#sauces {
+  color: rgba(0, 0, 0, .3);
+}
+
+#sauces:hover {
   color: rgba(0, 0, 0, 1);
   cursor: pointer;
 }
@@ -393,8 +473,318 @@ ul.scrollmenu-pics {
 .scrollmenu-pics img {
   width: 140px;
   height: auto;
+}
+
+#menu-pics-1 {
+  opacity: 1;
+  transition: opacity 600ms;
+}
+
+#menu-pics-1:hover {
+  opacity: 1;
+}
+
+#menu-pics-2 {
+  opacity: 1;
+  transition: opacity 600ms;
+}
+
+#menu-pics-2:hover {
+  opacity: 1;
+}
+
+#menu-pics-3 {
+  opacity: 1;
+  transition: opacity 600ms;
+}
+
+#menu-pics-3:hover {
+  opacity: 1;
+}
+
+#menu-pics-4 {
   opacity: .5;
   transition: opacity 600ms;
+}
+
+#menu-pics-4:hover {
+  opacity: 1;
+}
+
+#menu-pics-5 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-5:hover {
+  opacity: 1;
+}
+
+#menu-pics-6 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-6:hover {
+  opacity: 1;
+}
+
+#menu-pics-7 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-7:hover {
+  opacity: 1;
+}
+
+#menu-pics-8 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-8:hover {
+  opacity: 1;
+}
+
+#menu-pics-9 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-9:hover {
+  opacity: 1;
+}
+
+#menu-pics-10 {
+  opacity: .5;
+}
+
+#menu-pics-10:hover {
+  opacity: 1;
+}
+
+#menu-pics-11 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-11:hover {
+  opacity: 1;
+}
+
+#menu-pics-12 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-12:hover {
+  opacity: 1;
+}
+
+#menu-pics-13 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-13:hover {
+  opacity: 1;
+}
+
+#menu-pics-14 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-14:hover {
+  opacity: 1;
+}
+
+#menu-pics-15 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-15:hover {
+  opacity: 1;
+}
+
+#menu-pics-16 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-16:hover {
+  opacity: 1;
+}
+
+#menu-pics-17 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-17:hover {
+  opacity: 1;
+}
+
+#menu-pics-18 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-18:hover {
+  opacity: 1;
+}
+
+#menu-pics-19 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-19:hover {
+  opacity: 1;
+}
+
+#menu-pics-20 {
+  opacity: .5;
+}
+
+#menu-pics-20:hover {
+  opacity: 1;
+}
+
+#menu-pics-21 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-21:hover {
+  opacity: 1;
+}
+
+#menu-pics-22 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-22:hover {
+  opacity: 1;
+}
+
+#menu-pics-23 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-23:hover {
+  opacity: 1;
+}
+
+#menu-pics-24 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-24:hover {
+  opacity: 1;
+}
+
+#menu-pics-25 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-25:hover {
+  opacity: 1;
+}
+
+#menu-pics-26 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-26:hover {
+  opacity: 1;
+}
+
+#menu-pics-27 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-27:hover {
+  opacity: 1;
+}
+
+#menu-pics-28 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-28:hover {
+  opacity: 1;
+}
+
+#menu-pics-29 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-29:hover {
+  opacity: 1;
+}
+
+#menu-pics-30 {
+  opacity: .5;
+}
+
+#menu-pics-30:hover {
+  opacity: 1;
+}
+
+#menu-pics-31 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-31:hover {
+  opacity: 1;
+}
+
+#menu-pics-32 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-32:hover {
+  opacity: 1;
+}
+
+#menu-pics-33 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-33:hover {
+  opacity: 1;
+}
+
+#menu-pics-34 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-34:hover {
+  opacity: 1;
+}
+
+#menu-pics-35 {
+  opacity: .5;
+  transition: opacity 600ms;
+}
+
+#menu-pics-35:hover {
+  opacity: 1;
 }
 
 .scrollmenu-pics li:hover img {
