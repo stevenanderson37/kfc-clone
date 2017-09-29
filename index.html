@@ -592,7 +592,7 @@
           <div class="col-club-contact">
             <div id="col-club-email" class="col-club-inputs">
               <label for="e-mail">E-Mail</label>
-              <input id="e-mail" type="text" onchange="checkFilledEmail();" required />
+              <input id="e-mail" type="email" onchange="checkFilledEmail();" required />
             </div>
             <div id="col-club-zip" class="col-club-inputs">
               <label for="zip-code">Zip Code</label>
@@ -608,7 +608,7 @@
             <label for="terms-and-conditions">I hereby accept the <span>Colonel’s Terms & Conditions</span>.</label>
           </div>
 
-          <button>Submit</button>
+          <button type="button">Submit</button>
         </form>
       </div>
     </div>
@@ -620,15 +620,20 @@
       </div>
 
       <div class="store-locator-1">
+        <div class="store-parameters-container">
+          <input class="store-zip-query" type="text" placeholder="ENTER YOUR ZIP OR CITY" />
+          <div class="store-button-queries"></div>
+        </div>
+        <div class="store-locations">
 
+        </div>
       </div>
 
-      <div class="store-locator-2">
-
-      </div>
+      <div id="googleMap" class="store-locator-2"></div>
     </div>
 
     <script src="./js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=ADDKEY&callback=initMap"></script>
 
   </body>
 </html>

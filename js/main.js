@@ -394,3 +394,62 @@ checkFilledFirst();
 checkFilledLast();
 checkFilledEmail();
 checkFilledZip();
+
+// GOOGLE MAPS API
+function initMap() {
+  var mapProp= {
+    center: new google.maps.LatLng(37.8393,-84.2700),
+    zoom: 6,
+    styles: [
+      {elementType: 'geometry', stylers: [{color: '#F1F1F1'}]},
+      {elementType: 'labels.text.stroke', stylers: [{color: '#F1F1F1'}]},
+      {elementType: 'labels.text.fill', stylers: [{color: '#727272'}]},
+      {
+        featureType: 'administrative.province',
+        elementType: 'geometry.stroke',
+        stylers: [{color: '#ACACAC'}]
+      },
+      {
+        featureType: 'poi.park',
+        elementType: 'geometry.fill',
+        stylers: [{color: '#D1D1D1'}]
+      },
+      {
+        featureType: 'road',
+        elementType: 'geometry',
+        stylers: [{color: '#C1C1C1'}]
+      },
+      {
+        featureType: 'road.arterial',
+        elementType: 'geometry',
+        stylers: [{color: '#ffffff'}]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'geometry',
+        stylers: [{color: '#C1C1C1'}]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'geometry.stroke',
+        stylers: [{color: '#ACACAC'}]
+      },
+      // {
+      //   featureType: 'road.local',
+      //   elementType: 'geometry',
+      //   stylers: [{color: '#ffffff'}]
+      // },
+      {
+        featureType: 'water',
+        elementType: 'geometry.fill',
+        stylers: [{color: '#D1D1D1'}]
+      },
+      {
+        featureType: "water",
+        elementType: "labels.text.fill",
+        stylers: [{"color": "#9e9e9e"}]
+      }
+    ]
+  };
+  var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}
