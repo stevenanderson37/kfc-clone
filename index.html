@@ -622,10 +622,34 @@
       <div class="store-locator-1">
         <div class="store-parameters-container">
           <input class="store-zip-query" type="text" placeholder="ENTER YOUR ZIP OR CITY" />
-          <div class="store-button-queries"></div>
+
+          <div class="store-button-queries">
+            <div class="query-checkbox-container">
+              <div class="query-checkbox-checked"></div>
+              <input id="catering" type="checkbox" />
+            </div>
+            <label for="catering">Catering</label>
+
+            <div class="query-checkbox-container">
+              <div class="query-checkbox-checked"></div>
+              <input id="buffet" type="checkbox" />
+            </div>
+            <label for="buffet">Buffet</label>
+
+            <div class="query-checkbox-container">
+              <div class="query-checkbox-checked"></div>
+              <input id="wifi" type="checkbox" />
+            </div>
+            <label for="wifi">Wifi</label>
+          </div>
         </div>
         <div class="store-locations">
-
+          <div class="vertical-align-wrap">
+            <div class="vertical-align vertical-align--middle">
+              <h2>Howdy, folks!</h2>
+              <h6>ENTER YOUR ZIP OR CITY ABOVE TO FIND THE NEAREST<br>FINGER LICKIN' GOOD® CHICKEN NEAR YOU!</h6>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -633,7 +657,7 @@
     </div>
 
     <script src="./js/main.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=ADDKEY&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=INSERTKEY&callback=initMap"></script>
 
   </body>
 </html>

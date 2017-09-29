@@ -398,8 +398,9 @@ checkFilledZip();
 // GOOGLE MAPS API
 function initMap() {
   var mapProp= {
-    center: new google.maps.LatLng(37.8393,-84.2700),
+    center: new google.maps.LatLng(37.3529,-84.3405),
     zoom: 6,
+    mapTypeControl: false,
     styles: [
       {elementType: 'geometry', stylers: [{color: '#F1F1F1'}]},
       {elementType: 'labels.text.stroke', stylers: [{color: '#F1F1F1'}]},
