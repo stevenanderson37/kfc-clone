@@ -23,23 +23,43 @@ var previousCat = '#promotions';
 var previousArr = promotionsArr;
 
 function highlightMenu(category, picsArr) {
-  document.querySelector(previousCat).style.color = 'rgba(0, 0, 0, .3)';
+  var currentCate = document.querySelector(category);
+  var previousCate = document.querySelector(previousCat);
 
   if (category === '#promotions') {
-    var currentCat = document.querySelector(category);
-    currentCat.style.color = 'rgba(228, 0, 43, 1)';
+    previousCate.style.color = 'rgba(0, 0, 0, .3)';
+    currentCate.style.color = 'rgba(228, 0, 43, 1)';
+    currentCate.removeEventListener("mouseleave", changeColorLeave);
+    currentCate.removeEventListener("mouseover", changeColorOver);
+    previousCate.addEventListener("mouseleave", changeColorLeave);
+    previousCate.addEventListener("mouseover", changeColorOver);
+  } else if (previousCat === '#promotions') {
+    previousCate.style.color = 'rgba(0, 0, 0, .3)';
+    currentCate.style.color = 'rgba(0, 0, 0, 1)';
+    currentCate.removeEventListener("mouseleave", changeColorLeave);
+    currentCate.removeEventListener("mouseover", changeColorOver);
+    previousCate.addEventListener("mouseleave", changeColorLeave);
+    previousCate.addEventListener("mouseover", changeColorOverRed);
   } else {
-    var currentCat = document.querySelector(category);
-    currentCat.style.color = 'rgba(0, 0, 0, 1)';
+    previousCate.style.color = 'rgba(0, 0, 0, .3)';
+    currentCate.style.color = 'rgba(0, 0, 0, 1)';
+    currentCate.removeEventListener("mouseleave", changeColorLeave);
+    currentCate.removeEventListener("mouseover", changeColorOver);
+    previousCate.addEventListener("mouseleave", changeColorLeave);
+    previousCate.addEventListener("mouseover", changeColorOver);
   }
 
   for (j = 0; j < picsArr.length; j++) {
     var current = document.querySelector(picsArr[j]);
     current.style.opacity = '1';
+    current.removeEventListener("mouseleave", changeOpacityLeave);
+    current.removeEventListener("mouseover", changeOpacityOver);
   }
   for (k = 0; k < previousArr.length; k++) {
     var previous = document.querySelector(previousArr[k]);
     previous.style.opacity = '.5';
+    previous.addEventListener("mouseleave", changeOpacityLeave);
+    previous.addEventListener("mouseover", changeOpacityOver);
   }
 
   previousCat = category;
@@ -76,3 +96,24 @@ drinks.addEventListener("click", function() {
 sauces.addEventListener("click", function() {
   highlightMenu('#sauces', saucesArr);
 });
+
+// RETURNS A HOVER EFFECT TO THE IMAGES
+function changeColorOver(event) {
+  event.target.style.color = 'rgba(0, 0, 0, 1)';
+}
+
+function changeColorOverRed(event) {
+  event.target.style.color = 'rgba(228, 0, 43, 1)';
+}
+
+function changeColorLeave(event) {
+  event.target.style.color = 'rgba(0, 0, 0, .3)';
+}
+
+function changeOpacityOver(event) {
+  event.target.style.opacity = '1';
+}
+
+function changeOpacityLeave(event) {
+  event.target.style.opacity = '.5';
+}
