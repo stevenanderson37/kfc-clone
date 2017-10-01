@@ -33,6 +33,10 @@ button {
   background: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* HEADER */
 header {
   height: 60px;
@@ -468,6 +472,13 @@ ul.scrollmenu-pics {
   flex-flow: row;
   text-align: center;
   margin: 10px 10px;
+  position: relative;
+}
+
+.scrollmenu-pics li {
+  width: 140px;
+  height: auto;
+  position: relative;
 }
 
 .scrollmenu-pics img {
@@ -819,7 +830,7 @@ ul.scrollmenu-pics {
   opacity: 1;
 }
 
-#menu-last-pic {
+#pic-div-35 {
   padding-right: 600px;
 }
 

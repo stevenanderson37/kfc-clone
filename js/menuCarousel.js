@@ -22,33 +22,27 @@ var saucesArr = ['#menu-pics-35'];
 var previousCat = '#promotions';
 var previousArr = promotionsArr;
 
-function highlightMenu(category, picsArr) {
-  var currentCate = document.querySelector(category);
-  var previousCate = document.querySelector(previousCat);
+function changeColorOver(event) {
+  event.target.style.color = 'rgba(0, 0, 0, 1)';
+}
 
-  if (category === '#promotions') {
-    previousCate.style.color = 'rgba(0, 0, 0, .3)';
-    currentCate.style.color = 'rgba(228, 0, 43, 1)';
-    currentCate.removeEventListener("mouseleave", changeColorLeave);
-    currentCate.removeEventListener("mouseover", changeColorOver);
-    previousCate.addEventListener("mouseleave", changeColorLeave);
-    previousCate.addEventListener("mouseover", changeColorOver);
-  } else if (previousCat === '#promotions') {
-    previousCate.style.color = 'rgba(0, 0, 0, .3)';
-    currentCate.style.color = 'rgba(0, 0, 0, 1)';
-    currentCate.removeEventListener("mouseleave", changeColorLeave);
-    currentCate.removeEventListener("mouseover", changeColorOver);
-    previousCate.addEventListener("mouseleave", changeColorLeave);
-    previousCate.addEventListener("mouseover", changeColorOverRed);
-  } else {
-    previousCate.style.color = 'rgba(0, 0, 0, .3)';
-    currentCate.style.color = 'rgba(0, 0, 0, 1)';
-    currentCate.removeEventListener("mouseleave", changeColorLeave);
-    currentCate.removeEventListener("mouseover", changeColorOver);
-    previousCate.addEventListener("mouseleave", changeColorLeave);
-    previousCate.addEventListener("mouseover", changeColorOver);
-  }
+function changeColorOverRed(event) {
+  event.target.style.color = 'rgba(228, 0, 43, 1)';
+}
 
+function changeColorLeave(event) {
+  event.target.style.color = 'rgba(0, 0, 0, .3)';
+}
+
+function changeOpacityOver(event) {
+  event.target.style.opacity = '1';
+}
+
+function changeOpacityLeave(event) {
+  event.target.style.opacity = '.5';
+}
+
+function highlightMenuPics(picsArr) {
   for (j = 0; j < picsArr.length; j++) {
     var current = document.querySelector(picsArr[j]);
     current.style.opacity = '1';
@@ -61,9 +55,52 @@ function highlightMenu(category, picsArr) {
     previous.addEventListener("mouseleave", changeOpacityLeave);
     previous.addEventListener("mouseover", changeOpacityOver);
   }
+}
 
-  previousCat = category;
-  previousArr = picsArr;
+function highlightMenu(category, picsArr) {
+  var currentCate = document.querySelector(category);
+  var previousCate = document.querySelector(previousCat);
+
+  if (category === previousCat) {
+    previousCat = category;
+    previousArr = picsArr;
+  } else if (category === '#promotions') {
+    previousCate.style.color = 'rgba(0, 0, 0, .3)';
+    currentCate.style.color = 'rgba(228, 0, 43, 1)';
+    currentCate.removeEventListener("mouseleave", changeColorLeave);
+    currentCate.removeEventListener("mouseover", changeColorOver);
+    previousCate.addEventListener("mouseleave", changeColorLeave);
+    previousCate.addEventListener("mouseover", changeColorOver);
+
+    highlightMenuPics(picsArr);
+
+    previousCat = category;
+    previousArr = picsArr;
+  } else if (previousCat === '#promotions') {
+    previousCate.style.color = 'rgba(0, 0, 0, .3)';
+    currentCate.style.color = 'rgba(0, 0, 0, 1)';
+    currentCate.removeEventListener("mouseleave", changeColorLeave);
+    currentCate.removeEventListener("mouseover", changeColorOver);
+    previousCate.addEventListener("mouseleave", changeColorLeave);
+    previousCate.addEventListener("mouseover", changeColorOverRed);
+
+    highlightMenuPics(picsArr);
+
+    previousCat = category;
+    previousArr = picsArr;
+  } else {
+    previousCate.style.color = 'rgba(0, 0, 0, .3)';
+    currentCate.style.color = 'rgba(0, 0, 0, 1)';
+    currentCate.removeEventListener("mouseleave", changeColorLeave);
+    currentCate.removeEventListener("mouseover", changeColorOver);
+    previousCate.addEventListener("mouseleave", changeColorLeave);
+    previousCate.addEventListener("mouseover", changeColorOver);
+
+    highlightMenuPics(picsArr);
+
+    previousCat = category;
+    previousArr = picsArr;
+  }
 }
 
 promotions.addEventListener("click", function() {
@@ -97,23 +134,36 @@ sauces.addEventListener("click", function() {
   highlightMenu('#sauces', saucesArr);
 });
 
-// RETURNS A HOVER EFFECT TO THE IMAGES
-function changeColorOver(event) {
-  event.target.style.color = 'rgba(0, 0, 0, 1)';
-}
+// AUTOSCROLL UPON MENU CATEGORY CHOICE
+// var scrollX = 0;
+// var distance = 40;
+// var speed = 24;
+//
+// function autoScrollTo(el) {
+//   var container = document.querySelector('#horizontal-scroll');
+//   var current = document.getElementById(el);
+//   var currentX = container.clientWidth;
+//   var targetX = current.offsetLeft;
+//   var bodyWidth = container.offsetWidth;
+//   var xPos = currentX + 4900;
+//   var animator = setTimeout('autoScrollTo(\''+el+'\')', speed);
+//
+//   console.log(currentX, targetX, bodyWidth, xPos);
+//
+//   if (xPos > bodyWidth) {
+//     clearTimeout(animator);
+//   } else {
+//     if (currentX < targetX - distance) {
+//       scrollX = currentX + distance;
+//     } else {
+//       clearTimeout(animator);
+//     }
+//   }
+// }
 
-function changeColorOverRed(event) {
-  event.target.style.color = 'rgba(228, 0, 43, 1)';
-}
-
-function changeColorLeave(event) {
-  event.target.style.color = 'rgba(0, 0, 0, .3)';
-}
-
-function changeOpacityOver(event) {
-  event.target.style.opacity = '1';
-}
-
-function changeOpacityLeave(event) {
-  event.target.style.opacity = '.5';
+function autoScrollTo(el) {
+  var container = document.querySelector('#horizontal-scroll');
+  var current = document.getElementById(el);
+  var halfWindow = (window.innerWidth - 140) / 2;
+  container.scrollLeft = current.offsetLeft - halfWindow;
 }
