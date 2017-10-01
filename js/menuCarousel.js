@@ -103,67 +103,56 @@ function highlightMenu(category, picsArr) {
   }
 }
 
+function autoScrollTo(el, picsArr) {
+  var container = document.querySelector('#horizontal-scroll');
+  var current = document.getElementById(el);
+  var halfWindowOdd = (window.innerWidth - 140) / 2;
+  var halfWindowEven = (window.innerWidth - 280) / 2;
+
+  if (!(picsArr.length%2)) {
+    container.scrollLeft = current.offsetLeft - halfWindowEven;
+  } else {
+    container.scrollLeft = current.offsetLeft - halfWindowOdd;
+  }
+}
+
 promotions.addEventListener("click", function() {
   highlightMenu('#promotions', promotionsArr);
+  autoScrollTo('pic-div-2', promotionsArr);
 });
 chicken.addEventListener("click", function() {
   highlightMenu('#chicken', chickenArr);
+  autoScrollTo('pic-div-6', chickenArr);
 });
 sandwiches.addEventListener("click", function() {
   highlightMenu('#sandwiches', sandwichesArr);
+  autoScrollTo('pic-div-10', sandwichesArr);
 });
 meals.addEventListener("click", function() {
   highlightMenu('#meals', mealsArr);
+  autoScrollTo('pic-div-13', mealsArr);
 });
 fillUps.addEventListener("click", function() {
   highlightMenu('#fill-ups', fillUpsArr);
+  autoScrollTo('pic-div-18', fillUpsArr);
 });
 sides.addEventListener("click", function() {
   highlightMenu('#sides', sidesArr);
+  autoScrollTo('pic-div-24', sidesArr);
 });
 classics.addEventListener("click", function() {
   highlightMenu('#classics', classicsArr);
+  autoScrollTo('pic-div-28', classicsArr);
 });
 desserts.addEventListener("click", function() {
   highlightMenu('#desserts', dessertsArr);
+  autoScrollTo('pic-div-30', dessertsArr);
 });
 drinks.addEventListener("click", function() {
   highlightMenu('#drinks', drinksArr);
+  autoScrollTo('pic-div-33', drinksArr);
 });
 sauces.addEventListener("click", function() {
   highlightMenu('#sauces', saucesArr);
+  autoScrollTo('pic-div-35', saucesArr);
 });
-
-// AUTOSCROLL UPON MENU CATEGORY CHOICE
-// var scrollX = 0;
-// var distance = 40;
-// var speed = 24;
-//
-// function autoScrollTo(el) {
-//   var container = document.querySelector('#horizontal-scroll');
-//   var current = document.getElementById(el);
-//   var currentX = container.clientWidth;
-//   var targetX = current.offsetLeft;
-//   var bodyWidth = container.offsetWidth;
-//   var xPos = currentX + 4900;
-//   var animator = setTimeout('autoScrollTo(\''+el+'\')', speed);
-//
-//   console.log(currentX, targetX, bodyWidth, xPos);
-//
-//   if (xPos > bodyWidth) {
-//     clearTimeout(animator);
-//   } else {
-//     if (currentX < targetX - distance) {
-//       scrollX = currentX + distance;
-//     } else {
-//       clearTimeout(animator);
-//     }
-//   }
-// }
-
-function autoScrollTo(el) {
-  var container = document.querySelector('#horizontal-scroll');
-  var current = document.getElementById(el);
-  var halfWindow = (window.innerWidth - 140) / 2;
-  container.scrollLeft = current.offsetLeft - halfWindow;
-}
