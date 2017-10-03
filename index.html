@@ -14,6 +14,8 @@
     <link href="./styles/reset.css" rel="stylesheet">
     <link href="./styles/styles.css"  rel="stylesheet">
     <link href="./styles/media-queries.css"  rel="stylesheet">
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCTGSoP60TH4ikMAFd4Uw7WlleZA8LXK0A"></script>
   </head>
   <body>
     <header>
@@ -620,8 +622,8 @@
       </div>
 
       <div class="store-locator-1">
-        <div class="store-parameters-container">
-          <input class="store-zip-query" type="text" placeholder="ENTER YOUR ZIP OR CITY" />
+        <form id="store-queries" class="store-parameters-container">
+          <input id="store-zip-query" class="store-zip-query" type="text" placeholder="ENTER YOUR ZIP OR CITY" autocomplete="off" />
 
           <div class="store-button-queries">
             <div class="query-checkbox-container">
@@ -641,7 +643,7 @@
               <input id="wifi" type="checkbox" />
             </div>
             <label for="wifi">Wifi</label>
-          </div>
+          </form>
         </div>
         <div class="store-locations">
           <div class="vertical-align-wrap">
@@ -653,12 +655,14 @@
         </div>
       </div>
 
-      <div id="googleMap" class="store-locator-2"></div>
+      <div id="map" class="store-locator-2"></div>
     </div>
 
     <script src="./js/main.js"></script>
+    <script src="./js/storeLocator.js"></script>
     <script src="./js/menuCarousel.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTGSoP60TH4ikMAFd4Uw7WlleZA8LXK0A&callback=initMap"></script>
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTGSoP60TH4ikMAFd4Uw7WlleZA8LXK0A&callback=initMap"></script> -->
 
   </body>
 </html>
