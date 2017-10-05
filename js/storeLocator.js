@@ -133,6 +133,7 @@ function initialize() {
 function callback(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
+      // console.log(results[i]);
       // markers.push(createMarker(results[i]));
       if (i === 0) {
         markers.push(createMarkerKFC(results[i]));
@@ -153,22 +154,6 @@ var iconImage = {
   scaledSize: new google.maps.Size(25, 40)
 };
 
-function createMarkerKFC(place) {
-  var placeLoc = place.geometry.location;
-  var marker = new google.maps.Marker({
-    map: map,
-    position: place.geometry.location,
-    icon: iconImageKFC
-  });
-
-  google.maps.event.addDomListener(marker, 'click', function() {
-    infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.vicinity + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM<br>' + place.geometry.location + '<br>Place id: ' + place.place_id + '</div>');
-    infoWindow.open(map, this);
-  });
-
-  return marker;
-}
-
 function createMarker(place) {
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
@@ -176,10 +161,58 @@ function createMarker(place) {
     position: place.geometry.location,
     icon: iconImage
   });
+  var address;
+  var phone;
+
+  service.getDetails({placeId: place.place_id}, function(place, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      address = place.formatted_address;
+      phone = place.formatted_phone_number;
+    }
+  });
 
   google.maps.event.addDomListener(marker, 'click', function() {
-    infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.vicinity + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM<br>' + place.geometry.location + '<br>Place id: ' + place.place_id + '</div>');
-    infoWindow.open(map, this);
+    if (typeof address === 'undefined' || typeof phone === 'undefined') {
+      infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.vicinity + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM<br>PHONE UNAVAILABLE</div>');
+
+      infoWindow.open(map, this);
+    } else {
+      infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM' + '<br>' + phone + '</div>');
+
+      infoWindow.open(map, this);
+    }
+  });
+
+  return marker;
+}
+
+function createMarkerKFC(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location,
+    icon: iconImageKFC
+  });
+  var address;
+  var phone;
+
+  service.getDetails({placeId: place.place_id}, function(place, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      address = place.formatted_address;
+      phone = place.formatted_phone_number;
+    }
+  });
+
+  google.maps.event.addDomListener(marker, 'click', function() {
+    if (typeof address === 'undefined' || typeof phone === 'undefined') {
+      infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.vicinity + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM<br>PHONE UNAVAILABLE</div>');
+
+      infoWindow.open(map, this);
+    } else {
+      infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM' + '<br>' + phone + '</div>');
+
+      infoWindow.open(map, this);
+    }
   });
 
   return marker;
@@ -193,32 +226,6 @@ function clearResults(markers) {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
-// FUNCTION BELOW BRINGS IN DETIALED INFORMATION OF THE KFCs, WHICH IS WHAT I NEED; HOWEVER, SOME OF THE STORES DOES NOT COME BACK WITH THE PHONE OR ADDRESS FOR SOME REASON.
-// function createMarker(place) {
-//   var placeLoc = place.geometry.location;
-//   var marker = new google.maps.Marker({
-//     map: map,
-//     position: place.geometry.location
-//   });
-//   var address;
-//   var phone;
-//
-//   service.getDetails({placeId: place.place_id}, function(place, status) {
-//     if (status === google.maps.places.PlacesServiceStatus.OK) {
-//       address = place.formatted_address;
-//       phone = place.formatted_phone_number;
-//     }
-//   });
-//
-//   google.maps.event.addDomListener(marker, 'click', function() {
-//     infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM' + '<br>' + phone + '</div>');
-//     infoWindow.open(map, this);
-//   });
-//
-//   return marker;
-// }
-
 
 // vvvvvvvv OLD GOOGLE MAPS API CODE vvvvvvvv
 
