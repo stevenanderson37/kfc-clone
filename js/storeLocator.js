@@ -50,6 +50,7 @@ var mapStyles = [
   }
 ];
 var addQuery = document.forms['store-queries'];
+var zipQuery = document.querySelector('#store-zip-query');
 var newLat;
 var newLng;
 
@@ -64,10 +65,10 @@ function initialize() {
   });
 
   request = {
-    location: center,
-    radius: 120701,
-    types: ['restaurant'],
-    name: ['kfc']
+    location: center
+    // radius: 120701,
+    // types: ['restaurant'],
+    // name: ['kfc']
   };
 
   infoWindow = new google.maps.InfoWindow();
@@ -102,7 +103,9 @@ function initialize() {
 
     var request = {
       location: {lat: parseFloat(newLat), lng: parseFloat(newLng)},
-      radius: 120701,
+      // radius brings in the correct amount of results, but you can't use rankBy if you use radius. Annoying! I need to use rankBy in order to place the kfc marker on the closest restaurant to the query.
+      // radius: 120701,
+      rankBy: google.maps.places.RankBy.DISTANCE,
       types: ['restaurant'],
       name: ['kfc']
     };
@@ -111,19 +114,67 @@ function initialize() {
   });
 }
 
+// TRYING TO DISPATCH ANOTHER ENTER KEYPRESS SO IT DOESN'T HAVE TO BE PRESSED TWICE BY CLIENT. NOT WORKING RIGHT NOW.
+// var enterPressed = new KeyboardEvent('keypress',{'keyCode':32,'which':32});
+
+// zipQuery.addEventListener('keypress', function(e) {
+//   if (window.event.keyCode === 13) {
+//     document.dispatchEvent(enterPressed);
+//   }
+// });
+
+// zipQuery.onkeydown = function(){
+//   if(window.event.keyCode === 13){
+//     console.log(enterPressed);
+//     addQuery.dispatchEvent(enterPressed);
+//   }
+// }
+
 function callback(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
-      markers.push(createMarker(results[i]));
+      // markers.push(createMarker(results[i]));
+      if (i === 0) {
+        markers.push(createMarkerKFC(results[i]));
+      } else {
+        markers.push(createMarker(results[i]));
+      }
     }
   }
+}
+
+var iconImageKFC = {
+  url: '../img/marker-active.png',
+  scaledSize: new google.maps.Size(65, 45)
+};
+
+var iconImage = {
+  url: '../img/marker.png',
+  scaledSize: new google.maps.Size(25, 40)
+};
+
+function createMarkerKFC(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location,
+    icon: iconImageKFC
+  });
+
+  google.maps.event.addDomListener(marker, 'click', function() {
+    infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.vicinity + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM<br>' + place.geometry.location + '<br>Place id: ' + place.place_id + '</div>');
+    infoWindow.open(map, this);
+  });
+
+  return marker;
 }
 
 function createMarker(place) {
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
     map: map,
-    position: place.geometry.location
+    position: place.geometry.location,
+    icon: iconImage
   });
 
   google.maps.event.addDomListener(marker, 'click', function() {
