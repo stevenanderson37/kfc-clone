@@ -37,6 +37,10 @@ a {
   text-decoration: none;
 }
 
+strong {
+  font-weight: bold;
+}
+
 /* HEADER */
 header {
   height: 60px;
@@ -1217,7 +1221,7 @@ ul.scrollmenu-pics {
   height: calc(100vh - 60px);
   float: left;
   background-color: #f8f8f5;
-  border-right: 1px solid #BEBEBE;
+  border-right: 1px solid #e5e5e5;
 }
 
 .store-parameters-container {
@@ -1225,7 +1229,7 @@ ul.scrollmenu-pics {
   height: 54px;
   float: left;
   background-color: #fff;
-  border-bottom: 1px solid #BEBEBE;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .store-parameters-container input {
@@ -1262,7 +1266,7 @@ ul.scrollmenu-pics {
   height: 100%;
   width: 300px;
   float: right;
-  border-left: 1px solid #BEBEBE;
+  border-left: 1px solid #e5e5e5;
   text-transform: uppercase;
   display: flex;flex-flow: row;
 }
@@ -1286,7 +1290,7 @@ ul.scrollmenu-pics {
 .query-checkbox-container input[type="checkbox"] {
   width: 18px;
   height: 18px;
-  border: 1px solid #BEBEBE;
+  border: 1px solid #e5e5e5;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -1305,7 +1309,7 @@ ul.scrollmenu-pics {
   background-repeat: no-repeat;
   background-size: 14px 14px;
   background-position: center;
-  border: 1px solid #BEBEBE;
+  border: 1px solid #e5e5e5;
   pointer-events: none;
 }
 
@@ -1330,6 +1334,58 @@ ul.scrollmenu-pics {
   font-size: 11px;
   line-height: 15px;
   color: #a4a4a4;
+}
+
+#results-container {
+  display: none;
+}
+
+#number-of-results {
+  height: 55px;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  text-transform: none;
+  text-align: left;
+  /*padding-top: 20px;*/
+  padding-left: 20px;
+  font-family: "Interstate-Bold","helvetica-neue",helvetica,sans-serif;
+  font-size: 13px;
+  line-height: 54px;
+}
+
+#results-list {
+  height: calc(100vh - 168px);
+  width: 100%;
+  overflow: scroll;
+  position: relative;
+}
+
+#results-list li {
+  height: 259px;
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #fff;
+  font-family: "Interstate-Reg","helvetica-neue",helvetica,sans-serif;
+  text-align: center;
+  font-size: 13px;
+  line-height: 20px;
+  padding-top: 70px;
+  /*padding-top: 54px;*/
+  padding-bottom: 54px;
+}
+
+#results-list h3 {
+  font-family: "Interstate-Bold","helvetica-neue",helvetica,sans-serif;
+}
+
+#results-list p {
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+#results-placeholder {
+  display: table;
 }
 
 .store-locator-2 {
