@@ -1365,7 +1365,7 @@ ul.scrollmenu-pics {
   height: 259px;
   width: 100%;
   border-bottom: 1px solid #e5e5e5;
-  background-color: #fff;
+  /*background-color: #fff;*/
   font-family: "Interstate-Reg","helvetica-neue",helvetica,sans-serif;
   text-align: center;
   font-size: 13px;

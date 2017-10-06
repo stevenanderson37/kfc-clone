@@ -4,6 +4,7 @@ let infoWindow;
 let request;
 let service;
 let markers = [];
+let markersInfo = [];
 let newLatLng = [];
 const mapStyles = [
   {elementType: 'geometry', stylers: [{color: '#F1F1F1'}]},
@@ -149,6 +150,8 @@ const iconImage = {
   scaledSize: new google.maps.Size(25, 40)
 };
 
+let previousID;
+
 function createMarker(place) {
   let placeLoc = place.geometry.location;
   let marker = new google.maps.Marker({
@@ -165,6 +168,7 @@ function createMarker(place) {
   let addressFull1;
   let addressFull2;
   let phone;
+  markersInfo.push(place.place_id);
 
   service.getDetails({placeId: place.place_id}, function(place, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -176,9 +180,15 @@ function createMarker(place) {
     }
 
     if (typeof phone === 'undefined') {
-      resultsList.innerHTML += '<li><h3>' + addressPart1 + '<br>' + addressPart2 + '</h3>' + '<p>PHONE UNAVAILABLE</p>' + '<p>SUN - SAT: 10:30AM - 10:00PM</p></li>';
+      resultsList.innerHTML += '<li id="' + place.place_id + '"><h3>' + addressPart1 + '<br>' + addressPart2 + '</h3>' + '<p>PHONE UNAVAILABLE</p>' + '<p>SUN - SAT: 10:30AM - 10:00PM</p></li>';
+
+      let currentID = document.querySelector('#' + place.place_id + '');
+      currentID.style.backgroundColor = 'rgba(255, 255, 255, 1)';
     } else {
-      resultsList.innerHTML += '<li><h3>' + addressFull1 + '<br>' + addressFull2 + '</h3><p>' + phone + '</p>' + '<p>SUN - SAT: 10:30AM - 10:00PM</p></li>';
+      resultsList.innerHTML += '<li id="' + place.place_id + '"><h3>' + addressFull1 + '<br>' + addressFull2 + '</h3><p>' + phone + '</p>' + '<p>SUN - SAT: 10:30AM - 10:00PM</p></li>';
+
+      let currentID = document.querySelector('#' + place.place_id + '');
+      currentID.style.backgroundColor = 'rgba(255, 255, 255, 1)';
     }
   });
 
@@ -187,10 +197,38 @@ function createMarker(place) {
       infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.vicinity + '<br>' + 'PHONE UNAVAILABLE<br>SUN - SAT: 10:30AM - 10:00PM</div>');
 
       infoWindow.open(map, this);
+
+      // Changes all markers to the normal icon.
+      for(i = 0; i < markers.length; i++) {
+        markers[i].setIcon(iconImage);
+      }
+      // Changes the clicked marker to the KFC icon.
+      marker.setIcon(iconImageKFC);
+
+      // Changes the info background opacity to 0 for the marker that's clicked, and changes the previous selected marker to opacity of 1.
+      previousID = document.querySelector('#' + previousID);
+      let currentID = document.querySelector('#' + place.place_id + '');
+      currentID.style.backgroundColor = 'rgba(255, 255, 255, 0)';
+      previousID.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+      previousID = '' + place.place_id + '';
     } else {
       infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + addressFull1 + ', ' + addressFull2 + '<br>' + phone + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM</div>');
 
       infoWindow.open(map, this);
+
+      // Changes all markers to the normal icon.
+      for(i = 0; i < markers.length; i++) {
+        markers[i].setIcon(iconImage);
+      }
+      // Changes the clicked marker to the KFC icon.
+      marker.setIcon(iconImageKFC);
+
+      // Changes the info background opacity to 0 for the marker that's clicked, and changes the previous selected marker to opacity of 1.
+      previousID = document.querySelector('#' + previousID);
+      let currentID = document.querySelector('#' + place.place_id + '');
+      currentID.style.backgroundColor = 'rgba(255, 255, 255, 0)';
+      previousID.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+      previousID = '' + place.place_id + '';
     }
   });
 
@@ -213,6 +251,8 @@ function createMarkerKFC(place) {
   let addressFull1;
   let addressFull2;
   let phone;
+  markersInfo.push(place.place_id);
+  previousInfo = place.place_id;
 
   service.getDetails({placeId: place.place_id}, function(place, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -224,22 +264,62 @@ function createMarkerKFC(place) {
     }
 
     if (typeof phone === 'undefined') {
-      resultsList.innerHTML += '<li><h3>' + addressPart1 + '<br>' + addressPart2 + '</h3>' + '<p>PHONE UNAVAILABLE</p>' + '<p>SUN - SAT: 10:30AM - 10:00PM</p></li>';
+      resultsList.innerHTML += '<li id="' + place.place_id + '"><h3>' + addressPart1 + '<br>' + addressPart2 + '</h3>' + '<p>PHONE UNAVAILABLE</p>' + '<p>SUN - SAT: 10:30AM - 10:00PM</p></li>';
+
+      previousID = '' + place.place_id + '';
+      let currentID = document.querySelector('#' + place.place_id + '');
+      currentID.style.backgroundColor = 'rgba(255, 255, 255, 0)';
     } else {
-      resultsList.innerHTML += '<li><h3>' + addressFull1 + '<br>' + addressFull2 + '</h3>' + '<p>' + phone + '</p><p>SUN - SAT: 10:30AM - 10:00PM</p></li>';
+      resultsList.innerHTML += '<li id="' + place.place_id + '"><h3>' + addressFull1 + '<br>' + addressFull2 + '</h3>' + '<p>' + phone + '</p><p>SUN - SAT: 10:30AM - 10:00PM</p></li>';
+
+      previousID = '' + place.place_id + '';
+      let currentID = document.querySelector('#' + place.place_id + '');
+      currentID.style.backgroundColor = 'rgba(255, 255, 255, 0)';
     }
   });
+
+
 
   google.maps.event.addDomListener(marker, 'click', function() {
     if (typeof phone === 'undefined') {
       infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.vicinity + '<br>' + 'PHONE UNAVAILABLE<br>SUN - SAT: 10:30AM - 10:00PM</div>');
 
       infoWindow.open(map, this);
+
+      // Changes all markers to the normal icon.
+      for(i = 0; i < markers.length; i++) {
+        markers[i].setIcon(iconImage);
+      }
+      // Changes the clicked marker to the KFC icon.
+      marker.setIcon(iconImageKFC);
+
+      // Changes the info background opacity to 0 for the marker that's clicked, and changes the previous selected marker to opacity of 1.
+      previousID = document.querySelector('#' + previousID);
+      let currentID = document.querySelector('#' + place.place_id + '');
+      currentID.style.backgroundColor = 'rgba(255, 255, 255, 0)';
+      previousID.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+      previousID = '' + place.place_id + '';
     } else {
       infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + addressFull1 + ', ' + addressFull2 + '<br>' + phone + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM</div>');
 
       infoWindow.open(map, this);
+
+      // Changes all markers to the normal icon.
+      for(i = 0; i < markers.length; i++) {
+        markers[i].setIcon(iconImage);
+      }
+      // Changes the clicked marker to the KFC icon.
+      marker.setIcon(iconImageKFC);
+
+      // Changes the info background opacity to 0 for the marker that's clicked, and changes the previous selected marker to opacity of 1.
+      previousID = document.querySelector('#' + previousID);
+      let currentID = document.querySelector('#' + place.place_id + '');
+      currentID.style.backgroundColor = 'rgba(255, 255, 255, 0)';
+      previousID.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+      previousID = '' + place.place_id + '';
     }
+
+
   });
 
   return marker;
@@ -250,7 +330,7 @@ function clearResults(markers) {
     markers[m].setMap(null);
   }
   markers = [];
-
+  markersInfo = [];
 
 }
 
@@ -270,61 +350,4 @@ google.maps.event.addDomListener(window, 'load', initialize);
 //     console.log(enterPressed);
 //     addQuery.dispatchEvent(enterPressed);
 //   }
-// }
-
-// vvvvvvvv OLD GOOGLE MAPS API CODE vvvvvvvv
-
-// GOOGLE MAPS API
-// function initMap() {
-//   var mapProp = {
-//     center: new google.maps.LatLng(37.3529,-84.3405),
-//     zoom: 6,
-//     mapTypeControl: false,
-//     styles: [
-//       {elementType: 'geometry', stylers: [{color: '#F1F1F1'}]},
-//       {elementType: 'labels.text.stroke', stylers: [{color: '#F1F1F1'}]},
-//       {elementType: 'labels.text.fill', stylers: [{color: '#727272'}]},
-//       {
-//         featureType: 'administrative.province',
-//         elementType: 'geometry.stroke',
-//         stylers: [{color: '#ACACAC'}]
-//       },
-//       {
-//         featureType: 'poi.park',
-//         elementType: 'geometry.fill',
-//         stylers: [{color: '#D1D1D1'}]
-//       },
-//       {
-//         featureType: 'road',
-//         elementType: 'geometry',
-//         stylers: [{color: '#C1C1C1'}]
-//       },
-//       {
-//         featureType: 'road.arterial',
-//         elementType: 'geometry',
-//         stylers: [{color: '#ffffff'}]
-//       },
-//       {
-//         featureType: 'road.highway',
-//         elementType: 'geometry',
-//         stylers: [{color: '#C1C1C1'}]
-//       },
-//       {
-//         featureType: 'road.highway',
-//         elementType: 'geometry.stroke',
-//         stylers: [{color: '#ACACAC'}]
-//       },
-//       {
-//         featureType: 'water',
-//         elementType: 'geometry.fill',
-//         stylers: [{color: '#D1D1D1'}]
-//       },
-//       {
-//         featureType: "water",
-//         elementType: "labels.text.fill",
-//         stylers: [{"color": "#9e9e9e"}]
-//       }
-//     ]
-//   };
-//   var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 // }
