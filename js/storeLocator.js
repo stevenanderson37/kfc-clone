@@ -1,3 +1,29 @@
+// STORE LOCATOR SHOW
+var storeFinder2 = document.querySelector('.store-locator');
+
+storeFinder2.addEventListener('click', function() {
+  clearTimeout(carouselTimer);
+
+  var storeFinderCont = document.querySelector('.store-locator-container');
+  var storeLocator = document.querySelector('.store-locator-bar');
+
+  storeLocator.style.transform = 'translateY(60px)';
+  storeFinderCont.style.transform = 'translateY(0)';
+});
+
+// STORE LOCATOR HIDE
+var closeBox_3 = document.querySelector('#close-box-3');
+
+closeBox_3.addEventListener('click', function() {
+  carouselTimer = setTimeout("changeImg()", 4000);
+
+  var clubContainer = document.querySelector('.store-locator-container');
+  var storeLocator = document.querySelector('.store-locator-bar');
+
+  clubContainer.style.transform = 'translateY(100vh)';
+  storeLocator.style.transform = 'translateY(0px)';
+});
+
 // GOOGLE MAPS API + GOOGLE PLACES + GOOGLE GEOCODING SERVICE
 let map;
 let infoWindow;
@@ -59,10 +85,11 @@ const resultsCont = document.querySelector('#results-container');
 const numberOfResults = document.querySelector('#number-of-results');
 const resultsList = document.querySelector('#results-list');
 const resultsPlaceholder = document.querySelector('#results-placeholder');
+let center = {lat: 37.3529, lng: -84.3405};
 
 function initialize() {
   // var center = new google.maps.LatLng(37.3529,-84.3405);
-  let center = {lat: 37.3529, lng: -84.3405};
+  // let center = {lat: 37.3529, lng: -84.3405};
   map = new google.maps.Map(document.getElementById('map'), {
     center: center,
     zoom: 6,
@@ -194,9 +221,9 @@ function createMarker(place) {
 
   google.maps.event.addDomListener(marker, 'click', function() {
     if (typeof phone === 'undefined') {
-      infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.vicinity + '<br>' + 'PHONE UNAVAILABLE<br>SUN - SAT: 10:30AM - 10:00PM</div>');
+      // infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.vicinity + '<br>' + 'PHONE UNAVAILABLE<br>SUN - SAT: 10:30AM - 10:00PM</div>');
 
-      infoWindow.open(map, this);
+      // infoWindow.open(map, this);
 
       // Changes all markers to the normal icon.
       for(i = 0; i < markers.length; i++) {
@@ -212,9 +239,9 @@ function createMarker(place) {
       previousID.style.backgroundColor = 'rgba(255, 255, 255, 1)';
       previousID = '' + place.place_id + '';
     } else {
-      infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + addressFull1 + ', ' + addressFull2 + '<br>' + phone + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM</div>');
+      // infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + addressFull1 + ', ' + addressFull2 + '<br>' + phone + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM</div>');
 
-      infoWindow.open(map, this);
+      // infoWindow.open(map, this);
 
       // Changes all markers to the normal icon.
       for(i = 0; i < markers.length; i++) {
@@ -282,9 +309,9 @@ function createMarkerKFC(place) {
 
   google.maps.event.addDomListener(marker, 'click', function() {
     if (typeof phone === 'undefined') {
-      infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.vicinity + '<br>' + 'PHONE UNAVAILABLE<br>SUN - SAT: 10:30AM - 10:00PM</div>');
-
-      infoWindow.open(map, this);
+      // infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.vicinity + '<br>' + 'PHONE UNAVAILABLE<br>SUN - SAT: 10:30AM - 10:00PM</div>');
+      //
+      // infoWindow.open(map, this);
 
       // Changes all markers to the normal icon.
       for(i = 0; i < markers.length; i++) {
@@ -300,9 +327,9 @@ function createMarkerKFC(place) {
       previousID.style.backgroundColor = 'rgba(255, 255, 255, 1)';
       previousID = '' + place.place_id + '';
     } else {
-      infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + addressFull1 + ', ' + addressFull2 + '<br>' + phone + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM</div>');
-
-      infoWindow.open(map, this);
+      // infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + addressFull1 + ', ' + addressFull2 + '<br>' + phone + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM</div>');
+      //
+      // infoWindow.open(map, this);
 
       // Changes all markers to the normal icon.
       for(i = 0; i < markers.length; i++) {

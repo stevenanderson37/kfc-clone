@@ -16,6 +16,7 @@ var i = 0;
 var ranOnce = false;
 var images = ['#carousel_1', '#carousel_2', '#carousel_3', '#carousel_4', '#carousel_5'];
 var circles = ['#circle_1', '#circle_2', '#circle_3', '#circle_4', '#circle_5'];
+var carouselTimer;
 
 function changeImg() {
   var sliderDivCurrent = document.querySelector(images[i]);
@@ -50,7 +51,7 @@ function changeImg() {
     i = 0;
   }
 
-  setTimeout("changeImg()", 4000);
+  carouselTimer = setTimeout("changeImg()", 4000);
 }
 
 window.onload = changeImg;
@@ -209,6 +210,8 @@ navButton.addEventListener('click', function() {
 var videoPlay1 = document.querySelector('#carousel_1');
 
 videoPlay1.addEventListener('click', function() {
+  clearTimeout(carouselTimer);
+
   var videoContainer1 = document.querySelector('#video-container-1');
   var videoContent = document.querySelector('iframe');
   var storeLocator = document.querySelector('.store-locator-bar');
@@ -222,6 +225,8 @@ videoPlay1.addEventListener('click', function() {
 var videoPlay2 = document.querySelector('#carousel_3');
 
 videoPlay2.addEventListener('click', function() {
+  clearTimeout(carouselTimer);
+
   var videoContainer1 = document.querySelector('#video-container-1');
   var videoContent = document.querySelector('iframe');
   var storeLocator = document.querySelector('.store-locator-bar');
@@ -235,6 +240,8 @@ videoPlay2.addEventListener('click', function() {
 var closeBox_1 = document.querySelector('#close-box-1');
 
 closeBox_1.addEventListener('click', function() {
+  carouselTimer = setTimeout("changeImg()", 4000);
+
   var videoContainer1 = document.querySelector('#video-container-1');
   var videoContent = document.querySelector('iframe');
   var storeLocator = document.querySelector('.store-locator-bar');
@@ -250,6 +257,8 @@ var joinDiv = document.querySelector('.join-email');
 var joinNavDiv = document.querySelector('.nav-thirds-1');
 
 function openColonelsClub() {
+  clearTimeout(carouselTimer);
+
   var clubContainer = document.querySelector('.colonels-club');
   var storeLocator = document.querySelector('.store-locator-bar');
 
@@ -260,6 +269,8 @@ function openColonelsClub() {
 joinIcon.addEventListener('click', openColonelsClub);
 joinDiv.addEventListener('click', openColonelsClub);
 joinNavDiv.addEventListener('click', function() {
+  clearTimeout(carouselTimer);
+
   navClick = false;
 
   navTopBar.style.transition = 'transform 200ms ease, top 200ms linear 200ms';
@@ -286,65 +297,14 @@ joinNavDiv.addEventListener('click', function() {
 var closeBox_2 = document.querySelector('#close-box-2');
 
 closeBox_2.addEventListener('click', function() {
+  carouselTimer = setTimeout("changeImg()", 4000);
+
   var clubContainer = document.querySelector('.colonels-club');
   var storeLocator = document.querySelector('.store-locator-bar');
 
   clubContainer.style.transform = 'translateY(100vh)';
   storeLocator.style.transform = 'translateY(0px)';
 });
-
-// STORE LOCATION SHOW
-var storeFinder2 = document.querySelector('.store-locator');
-
-storeFinder2.addEventListener('click', function() {
-  var storeFinderCont = document.querySelector('.store-locator-container');
-  var storeLocator = document.querySelector('.store-locator-bar');
-
-  storeLocator.style.transform = 'translateY(60px)';
-  storeFinderCont.style.transform = 'translateY(0)';
-});
-
-// STORE LOCATOR HIDE
-var closeBox_3 = document.querySelector('#close-box-3');
-
-closeBox_3.addEventListener('click', function() {
-  var clubContainer = document.querySelector('.store-locator-container');
-  var storeLocator = document.querySelector('.store-locator-bar');
-
-  clubContainer.style.transform = 'translateY(100vh)';
-  storeLocator.style.transform = 'translateY(0px)';
-});
-
-// FUNCTION THAT CHANGES THE VERTICAL TO HORIZONTAL SCROLLING FOR THE DIV WITH THE FOOD PICTURES.
-var menuFood = document.querySelector('.scrollmenu-pics');
-var menuGroups = document.querySelector('.scrollmenu-categories');
-
-var mouseWheelEvtPics = function (event) {
-  if (menuFood.doScroll) {
-    menuFood.doScroll(event.wheelDelta>0?"left":"right");
-  } else if ((event.wheelDelta || event.detail) > 0) {
-    menuFood.scrollLeft -= 20;
-  } else {
-    menuFood.scrollLeft += 20;
-  }
-
-  return false;
-}
-
-var mouseWheelEvtGroups = function (event) {
-  if (menuGroups.doScroll) {
-    menuGroups.doScroll(event.wheelDelta>0?"left":"right");
-  } else if ((event.wheelDelta || event.detail) > 0) {
-    menuGroups.scrollLeft -= 20;
-  } else {
-    menuGroups.scrollLeft += 20;
-  }
-
-  return false;
-}
-
-menuFood.addEventListener("mousewheel", mouseWheelEvtPics);
-menuGroups.addEventListener("mousewheel", mouseWheelEvtGroups);
 
 // ADDS BACKGROUND-COLOR TO INPUT TYPE IF THE INPUT IF INPUT IS POPULATED BY TYPE, SO THE LABEL DISAPPEARS BEHIND IT.
 function checkFilledFirst() {
@@ -391,3 +351,38 @@ checkFilledFirst();
 checkFilledLast();
 checkFilledEmail();
 checkFilledZip();
+
+// CHANGES THE SUBMIT BUTTON TO RED IF ALL THE REQUIRED INPUTS ARE FILLED. NOT WORKING RIGHT NOW.
+// function changeSubmitColor() {
+//   let clubFirstName = document.querySelector('#first-name');
+//   let clubLastName = document.querySelector('#last-name');
+//   let clubEmail = document.querySelector('#e-mail');
+//   let clubZip = document.querySelector('#zip-code');
+//   let clubTerms = document.querySelector('#terms-and-conditions');
+//   let clubSubmit = document.querySelector('#club-submit button');
+//   let clubFormFields = [clubFirstName, clubLastName, clubEmail, clubZip, clubTerms];
+//   let invalidForm = true;
+//
+//   for (i = 0; i < clubFormFields.length; i++) {
+//     if (clubFormFields[i] === "") {
+//       invalidForm = true;
+//     } else {
+//       invalidForm = false;
+//     }
+//   }
+//
+//   if (invalidForm === true) {
+//     clubSubmit.style.background = '#BEBEBE';
+//   } else if (invalidForm === false) {
+//     clubSubmit.style.background = '#e4002b';
+//
+//     clubSubmit.addEventListener('mouseover', function() {
+//       clubSubmit.style.background = '#ab182f';
+//     });
+//     clubSubmit.addEventListener('mouseout', function() {
+//       clubSubmit.style.background = '#e4002b';
+//     });
+//   }
+// }
+//
+// changeSubmitColor();

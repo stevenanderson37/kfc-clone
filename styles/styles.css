@@ -1629,6 +1629,6 @@ input[type="checkbox"]:checked {
   text-transform: uppercase;
 }
 
-.col-club-form button:valid {
-  background-color: #e4002b;
+.col-club-form:valid {
+  background: #e4002b;
 }

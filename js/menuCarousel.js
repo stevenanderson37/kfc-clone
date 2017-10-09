@@ -1,3 +1,34 @@
+// FUNCTION THAT CHANGES THE VERTICAL TO HORIZONTAL SCROLLING FOR THE DIV WITH THE FOOD PICTURES.
+var menuFood = document.querySelector('.scrollmenu-pics');
+var menuGroups = document.querySelector('.scrollmenu-categories');
+
+var mouseWheelEvtPics = function (event) {
+  if (menuFood.doScroll) {
+    menuFood.doScroll(event.wheelDelta>0?"left":"right");
+  } else if ((event.wheelDelta || event.detail) > 0) {
+    menuFood.scrollLeft -= 20;
+  } else {
+    menuFood.scrollLeft += 20;
+  }
+
+  return false;
+}
+
+var mouseWheelEvtGroups = function (event) {
+  if (menuGroups.doScroll) {
+    menuGroups.doScroll(event.wheelDelta>0?"left":"right");
+  } else if ((event.wheelDelta || event.detail) > 0) {
+    menuGroups.scrollLeft -= 20;
+  } else {
+    menuGroups.scrollLeft += 20;
+  }
+
+  return false;
+}
+
+menuFood.addEventListener("mousewheel", mouseWheelEvtPics);
+menuGroups.addEventListener("mousewheel", mouseWheelEvtGroups);
+
 // MENU ITEMS CAROUSEL
 var promotions = document.querySelector('#promotions');
 var promotionsArr = ['#menu-pics-1', '#menu-pics-2', '#menu-pics-3'];
