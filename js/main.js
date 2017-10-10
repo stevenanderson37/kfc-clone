@@ -353,15 +353,38 @@ checkFilledEmail();
 checkFilledZip();
 
 // CHANGES THE SUBMIT BUTTON TO RED IF ALL THE REQUIRED INPUTS ARE FILLED. NOT WORKING RIGHT NOW.
-// const clubFirstName = document.forms["colonels-club-form"]["firstname"];
-// const clubLastName = document.forms["colonels-club-form"]["lastname"];
-// const clubEmail = document.forms["colonels-club-form"]["email"];
-// const clubZip = document.forms["colonels-club-form"]["zipcode"];
-// const clubTerms = document.forms["colonels-club-form"]["termsandconditions"];
-// const clubSubmit = document.querySelector('#club-submit');
-// const clubFormFields = [clubFirstName, clubLastName, clubEmail, clubZip];
-// let invalidForm = true;
-//
+const clubFirstName = document.forms["colonels-club-form"]["firstname"];
+const clubLastName = document.forms["colonels-club-form"]["lastname"];
+const clubEmail = document.forms["colonels-club-form"]["email"];
+const clubZip = document.forms["colonels-club-form"]["zipcode"];
+const clubTerms = document.forms["colonels-club-form"]["termsandconditions"];
+const clubSubmit = document.querySelector('#club-submit');
+const clubFormFields = [clubFirstName, clubLastName, clubEmail, clubZip];
+const clubForm = document.forms["colonels-club-form"];
+let invalidForm = true;
+
+clubForm.addEventListener('change', function() {
+  if (clubFirstName.value === "" || clubLastName.value === "" || clubEmail.value === "" || clubZip.value === "" || clubTerms.checked === false) {
+    clubSubmit.style.backgroundColor = '#BEBEBE';
+
+    clubSubmit.addEventListener('mouseenter', function() {
+      clubSubmit.style.backgroundColor = '#BEBEBE';
+    }, true);
+    clubSubmit.addEventListener('mouseleave', function() {
+      clubSubmit.style.backgroundColor = '#BEBEBE';
+    }, true);
+  } else {
+    clubSubmit.style.backgroundColor = '#e4002b';
+
+    clubSubmit.addEventListener('mouseenter', function() {
+      clubSubmit.style.backgroundColor = '#ab182f';
+    }, true);
+    clubSubmit.addEventListener('mouseleave', function() {
+      clubSubmit.style.backgroundColor = '#e4002b';
+    }, true);
+  }
+});
+
 // function changeSubmitColor() {
 //   if (clubFirstName.value === "" && clubLastName.value === "" && clubEmail.value === "" && clubZip.value === "" && clubTerms.checked === false) {
 //     clubSubmit.style.backgroundColor = '#BEBEBE';
