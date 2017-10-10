@@ -583,34 +583,34 @@
           <div class="col-club-name">
             <div id="col-club-first" class="col-club-inputs">
               <label for="first-name">First Name</label>
-              <input id="first-name" type="text" onchange="checkFilledFirst();" required />
+              <input id="first-name" type="text" name="firstname" onchange="checkFilledFirst();" required />
             </div>
             <div id="col-club-last" class="col-club-inputs">
               <label for="last-name">Last Name</label>
-              <input id="last-name" type="text" onchange="checkFilledLast();" required />
+              <input id="last-name" type="text" name="lastname" onchange="checkFilledLast();" required />
             </div>
           </div>
 
           <div class="col-club-contact">
             <div id="col-club-email" class="col-club-inputs">
               <label for="e-mail">E-Mail</label>
-              <input id="e-mail" type="email" onchange="checkFilledEmail();" required />
+              <input id="e-mail" type="email" name="email" onchange="checkFilledEmail();" required />
             </div>
             <div id="col-club-zip" class="col-club-inputs">
               <label for="zip-code">Zip Code</label>
-              <input id="zip-code" type="text" onchange="checkFilledZip();" required />
+              <input id="zip-code" type="text" name="zipcode" onchange="checkFilledZip();" required />
             </div>
           </div>
 
           <div class="col-club-terms">
             <div class="checkbox-container">
               <div class="checkbox-checked"></div>
-              <input id="terms-and-conditions" type="checkbox" required />
+              <input id="terms-and-conditions" type="checkbox" name="termsandconditions" required />
             </div>
             <label for="terms-and-conditions">I hereby accept the <span>Colonel’s Terms & Conditions</span>.</label>
           </div>
 
-          <button id="club-submit" type="button">Submit</button>
+          <input id="club-submit" type="submit" name="submit" value="submit"></input>
         </form>
       </div>
     </div>

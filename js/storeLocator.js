@@ -238,6 +238,11 @@ function createMarker(place) {
       currentID.style.backgroundColor = 'rgba(255, 255, 255, 0)';
       previousID.style.backgroundColor = 'rgba(255, 255, 255, 1)';
       previousID = '' + place.place_id + '';
+
+      // AUTO SCROLL-TO INFORMATION WHEN MARKER IS CLICKED
+      let container = document.querySelector('#results-list');
+      let currentDiv = document.getElementById('' + place.place_id + '');
+      container.scrollTop = currentDiv.offsetTop;
     } else {
       // infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + addressFull1 + ', ' + addressFull2 + '<br>' + phone + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM</div>');
 
@@ -256,6 +261,11 @@ function createMarker(place) {
       currentID.style.backgroundColor = 'rgba(255, 255, 255, 0)';
       previousID.style.backgroundColor = 'rgba(255, 255, 255, 1)';
       previousID = '' + place.place_id + '';
+
+      // AUTO SCROLL-TO INFORMATION WHEN MARKER IS CLICKED
+      let container = document.querySelector('#results-list');
+      let currentDiv = document.getElementById('' + place.place_id + '');
+      container.scrollTop = currentDiv.offsetTop;
     }
   });
 
@@ -326,6 +336,11 @@ function createMarkerKFC(place) {
       currentID.style.backgroundColor = 'rgba(255, 255, 255, 0)';
       previousID.style.backgroundColor = 'rgba(255, 255, 255, 1)';
       previousID = '' + place.place_id + '';
+
+      // AUTO SCROLL-TO INFORMATION WHEN MARKER IS CLICKED
+      let container = document.querySelector('#results-list');
+      let currentDiv = document.getElementById('' + place.place_id + '');
+      container.scrollTop = currentDiv.offsetTop;
     } else {
       // infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + addressFull1 + ', ' + addressFull2 + '<br>' + phone + '<br>' + 'SUN - SAT: 10:30AM - 10:00PM</div>');
       //
@@ -344,9 +359,12 @@ function createMarkerKFC(place) {
       currentID.style.backgroundColor = 'rgba(255, 255, 255, 0)';
       previousID.style.backgroundColor = 'rgba(255, 255, 255, 1)';
       previousID = '' + place.place_id + '';
+
+      // AUTO SCROLL-TO INFORMATION WHEN MARKER IS CLICKED
+      let container = document.querySelector('#results-list');
+      let currentDiv = document.getElementById('' + place.place_id + '');
+      container.scrollTop = currentDiv.offsetTop;
     }
-
-
   });
 
   return marker;

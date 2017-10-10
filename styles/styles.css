@@ -27,6 +27,12 @@ input[type="checkbox"] {
   appearance: none;
 }
 
+input[type="submit"] {
+  outline: none;
+  border: 0px;
+  background: none;
+}
+
 button {
   outline: none;
   border: 0px;
@@ -1544,7 +1550,12 @@ ul.scrollmenu-pics {
   float: right;
 }
 
-.colonels-club input {
+.colonels-club input[type="text"] {
+  border-bottom: 1px solid #BEBEBE;
+  transition: border-bottom 300ms ease;
+}
+
+.colonels-club input[type="email"] {
   border-bottom: 1px solid #BEBEBE;
   transition: border-bottom 300ms ease;
 }
@@ -1613,11 +1624,7 @@ input[type="checkbox"]:checked {
   opacity: 0;
 }
 
-/*input[type="text"]:invalid {
-  border-bottom: 1px solid #e4002b;
-}*/
-
-.col-club-form button {
+#colonels-club-form input[type="submit"] {
   width: 143px;
   height: 52px;
   margin: auto;
@@ -1627,8 +1634,13 @@ input[type="checkbox"]:checked {
   font-size: 13px;
   line-height: 26px;
   text-transform: uppercase;
+  transition: background 300ms ease;
 }
 
-.col-club-form:valid {
-  background: #e4002b;
+/*#colonels-club-form:valid {
+  background-color: #e4002b;
 }
+
+#colonels-club-form:valid:hover {
+  background-color: #ab182f;
+}*/

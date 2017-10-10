@@ -353,36 +353,39 @@ checkFilledEmail();
 checkFilledZip();
 
 // CHANGES THE SUBMIT BUTTON TO RED IF ALL THE REQUIRED INPUTS ARE FILLED. NOT WORKING RIGHT NOW.
+// const clubFirstName = document.forms["colonels-club-form"]["firstname"];
+// const clubLastName = document.forms["colonels-club-form"]["lastname"];
+// const clubEmail = document.forms["colonels-club-form"]["email"];
+// const clubZip = document.forms["colonels-club-form"]["zipcode"];
+// const clubTerms = document.forms["colonels-club-form"]["termsandconditions"];
+// const clubSubmit = document.querySelector('#club-submit');
+// const clubFormFields = [clubFirstName, clubLastName, clubEmail, clubZip];
+// let invalidForm = true;
+//
 // function changeSubmitColor() {
-//   let clubFirstName = document.querySelector('#first-name');
-//   let clubLastName = document.querySelector('#last-name');
-//   let clubEmail = document.querySelector('#e-mail');
-//   let clubZip = document.querySelector('#zip-code');
-//   let clubTerms = document.querySelector('#terms-and-conditions');
-//   let clubSubmit = document.querySelector('#club-submit button');
-//   let clubFormFields = [clubFirstName, clubLastName, clubEmail, clubZip, clubTerms];
-//   let invalidForm = true;
+//   if (clubFirstName.value === "" && clubLastName.value === "" && clubEmail.value === "" && clubZip.value === "" && clubTerms.checked === false) {
+//     clubSubmit.style.backgroundColor = '#BEBEBE';
 //
-//   for (i = 0; i < clubFormFields.length; i++) {
-//     if (clubFormFields[i] === "") {
-//       invalidForm = true;
-//     } else {
-//       invalidForm = false;
-//     }
-//   }
-//
-//   if (invalidForm === true) {
-//     clubSubmit.style.background = '#BEBEBE';
-//   } else if (invalidForm === false) {
-//     clubSubmit.style.background = '#e4002b';
-//
-//     clubSubmit.addEventListener('mouseover', function() {
-//       clubSubmit.style.background = '#ab182f';
+//     clubSubmit.removeEventListener('mouseenter', function() {
+//       clubSubmit.style.backgroundColor = '#ab182f';
 //     });
-//     clubSubmit.addEventListener('mouseout', function() {
-//       clubSubmit.style.background = '#e4002b';
+//     clubSubmit.removeEventListener('mouseleave', function() {
+//       clubSubmit.style.backgroundColor = '#e4002b';
+//     });
+//   } else {
+//     clubSubmit.style.backgroundColor = '#e4002b';
+//
+//     clubSubmit.addEventListener('mouseenter', function() {
+//       clubSubmit.style.backgroundColor = '#ab182f';
+//     });
+//     clubSubmit.addEventListener('mouseleave', function() {
+//       clubSubmit.style.backgroundColor = '#e4002b';
 //     });
 //   }
 // }
 //
-// changeSubmitColor();
+// clubFirstName.addEventListener('change', changeSubmitColor);
+// clubLastName.addEventListener('change', changeSubmitColor);
+// clubEmail.addEventListener('change', changeSubmitColor);
+// clubZip.addEventListener('change', changeSubmitColor);
+// clubTerms.addEventListener('change', changeSubmitColor);
