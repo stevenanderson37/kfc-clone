@@ -359,9 +359,7 @@ const clubEmail = document.forms["colonels-club-form"]["email"];
 const clubZip = document.forms["colonels-club-form"]["zipcode"];
 const clubTerms = document.forms["colonels-club-form"]["termsandconditions"];
 const clubSubmit = document.querySelector('#club-submit');
-const clubFormFields = [clubFirstName, clubLastName, clubEmail, clubZip];
 const clubForm = document.forms["colonels-club-form"];
-let invalidForm = true;
 
 clubForm.addEventListener('change', function() {
   if (clubFirstName.value === "" || clubLastName.value === "" || clubEmail.value === "" || clubZip.value === "" || clubTerms.checked === false) {
@@ -384,31 +382,3 @@ clubForm.addEventListener('change', function() {
     }, true);
   }
 });
-
-// function changeSubmitColor() {
-//   if (clubFirstName.value === "" && clubLastName.value === "" && clubEmail.value === "" && clubZip.value === "" && clubTerms.checked === false) {
-//     clubSubmit.style.backgroundColor = '#BEBEBE';
-//
-//     clubSubmit.removeEventListener('mouseenter', function() {
-//       clubSubmit.style.backgroundColor = '#ab182f';
-//     });
-//     clubSubmit.removeEventListener('mouseleave', function() {
-//       clubSubmit.style.backgroundColor = '#e4002b';
-//     });
-//   } else {
-//     clubSubmit.style.backgroundColor = '#e4002b';
-//
-//     clubSubmit.addEventListener('mouseenter', function() {
-//       clubSubmit.style.backgroundColor = '#ab182f';
-//     });
-//     clubSubmit.addEventListener('mouseleave', function() {
-//       clubSubmit.style.backgroundColor = '#e4002b';
-//     });
-//   }
-// }
-//
-// clubFirstName.addEventListener('change', changeSubmitColor);
-// clubLastName.addEventListener('change', changeSubmitColor);
-// clubEmail.addEventListener('change', changeSubmitColor);
-// clubZip.addEventListener('change', changeSubmitColor);
-// clubTerms.addEventListener('change', changeSubmitColor);
